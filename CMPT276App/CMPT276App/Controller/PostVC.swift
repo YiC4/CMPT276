@@ -2,7 +2,7 @@
 //  PostVC.swift
 //  CMPT276App
 //
-//  Created by Michael Lee on 2018-06-27.
+//  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
 

@@ -16,7 +16,10 @@ class ConnectVC: UITableViewController {
         // Do any additional setup after loading the view.
         }
     
-    
+    func getUsersData(){
+        //TODO: GET A USER'S NAME TO POST IN FORUM
+        //HOW: INCLUDE THE KEYCHAIN AND FORCE UNWRAP THEIR USERNAME/PASS
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,7 +35,27 @@ class ConnectVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       return UITableViewCell()
+        if indexPath.row == 0{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ShareSomethingCell")
+            as? ShareSomethingCell{
+                cell.configCell()
+                cell.shareBtn.addTarget(self, action: #selector(toCreatePost), for: .touchUpInside)
+                return cell
+            }
+        }
+        return UITableViewCell()
+    }
+    
+    @objc func toCreatePost(_ sender: AnyObject){
+            performSegue(withIdentifier: "toCreatePost", sender: nil)
+    }
+    
+    func getPosts(){//TODO: FINISH IMPLEMENTING THIS WHEN DATABASE IS UP
+        //Database.database().reference().child("posts").observeSingleEvent(of: .value){
+        //(snapshot) in code
+        //guard let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] else{return}
+        //...
+        
     }
 
     /*

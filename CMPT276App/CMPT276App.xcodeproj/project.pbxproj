@@ -17,7 +17,10 @@
 		342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655F120DB5D5800020C3E /* CMPT276AppTests.swift */; };
 		342655FD20DB5D5800020C3E /* CMPT276AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */; };
 		3426560B20E493A000020C3E /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560A20E493A000020C3E /* ConnectVC.swift */; };
-		3426560D20E49DE100020C3E /* ShareSomething.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560C20E49DE100020C3E /* ShareSomething.swift */; };
+		3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */; };
+		3426561120E4AFA100020C3E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561020E4AFA100020C3E /* PostCell.swift */; };
+		3426561520E4B3BD00020C3E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561420E4B3BD00020C3E /* Post.swift */; };
+		3426561820E4BA6100020C3E /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561720E4BA6100020C3E /* PostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,10 @@
 		342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMPT276AppUITests.swift; sourceTree = "<group>"; };
 		342655FE20DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3426560A20E493A000020C3E /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
-		3426560C20E49DE100020C3E /* ShareSomething.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSomething.swift; sourceTree = "<group>"; };
+		3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSomethingCell.swift; sourceTree = "<group>"; };
+		3426561020E4AFA100020C3E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		3426561420E4B3BD00020C3E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3426561720E4BA6100020C3E /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,9 @@
 		342655D720DB5D5700020C3E /* CMPT276App */ = {
 			isa = PBXGroup;
 			children = (
+				3426561620E4BA1D00020C3E /* Controller */,
+				3426561320E4B3A200020C3E /* Model */,
+				3426561220E4B02B00020C3E /* View */,
 				342655D820DB5D5700020C3E /* AppDelegate.swift */,
 				342655DA20DB5D5700020C3E /* RootViewController.swift */,
 				342655DC20DB5D5700020C3E /* DataViewController.swift */,
@@ -113,8 +122,6 @@
 				342655E320DB5D5800020C3E /* Assets.xcassets */,
 				342655E520DB5D5800020C3E /* LaunchScreen.storyboard */,
 				342655E820DB5D5800020C3E /* Info.plist */,
-				3426560A20E493A000020C3E /* ConnectVC.swift */,
-				3426560C20E49DE100020C3E /* ShareSomething.swift */,
 			);
 			path = CMPT276App;
 			sourceTree = "<group>";
@@ -135,6 +142,32 @@
 				342655FE20DB5D5800020C3E /* Info.plist */,
 			);
 			path = CMPT276AppUITests;
+			sourceTree = "<group>";
+		};
+		3426561220E4B02B00020C3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */,
+				3426561020E4AFA100020C3E /* PostCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3426561320E4B3A200020C3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3426561420E4B3BD00020C3E /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3426561620E4BA1D00020C3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3426560A20E493A000020C3E /* ConnectVC.swift */,
+				3426561720E4BA6100020C3E /* PostVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3426560D20E49DE100020C3E /* ShareSomething.swift in Sources */,
+				3426561120E4AFA100020C3E /* PostCell.swift in Sources */,
 				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
 				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,
+				3426561520E4B3BD00020C3E /* Post.swift in Sources */,
+				3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */,
 				342655DF20DB5D5700020C3E /* ModelController.swift in Sources */,
+				3426561820E4BA6100020C3E /* PostVC.swift in Sources */,
 				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,
 				342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */,
 			);

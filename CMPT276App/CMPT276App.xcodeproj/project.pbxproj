@@ -16,6 +16,8 @@
 		342655E720DB5D5800020C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342655E520DB5D5800020C3E /* LaunchScreen.storyboard */; };
 		342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655F120DB5D5800020C3E /* CMPT276AppTests.swift */; };
 		342655FD20DB5D5800020C3E /* CMPT276AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */; };
+		3426560B20E493A000020C3E /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560A20E493A000020C3E /* ConnectVC.swift */; };
+		3426560D20E49DE100020C3E /* ShareSomething.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560C20E49DE100020C3E /* ShareSomething.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		342655F820DB5D5800020C3E /* CMPT276AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMPT276AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMPT276AppUITests.swift; sourceTree = "<group>"; };
 		342655FE20DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3426560A20E493A000020C3E /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
+		3426560C20E49DE100020C3E /* ShareSomething.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSomething.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				342655E320DB5D5800020C3E /* Assets.xcassets */,
 				342655E520DB5D5800020C3E /* LaunchScreen.storyboard */,
 				342655E820DB5D5800020C3E /* Info.plist */,
+				3426560A20E493A000020C3E /* ConnectVC.swift */,
+				3426560C20E49DE100020C3E /* ShareSomething.swift */,
 			);
 			path = CMPT276App;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3426560D20E49DE100020C3E /* ShareSomething.swift in Sources */,
 				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
+				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,
 				342655DF20DB5D5700020C3E /* ModelController.swift in Sources */,
 				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,
 				342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */,

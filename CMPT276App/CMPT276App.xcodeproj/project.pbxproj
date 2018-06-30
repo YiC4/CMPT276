@@ -21,6 +21,8 @@
 		3426561120E4AFA100020C3E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561020E4AFA100020C3E /* PostCell.swift */; };
 		3426561520E4B3BD00020C3E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561420E4B3BD00020C3E /* Post.swift */; };
 		3426561820E4BA6100020C3E /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561720E4BA6100020C3E /* PostVC.swift */; };
+		3426561A20E8000300020C3E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561920E8000300020C3E /* CommentCell.swift */; };
+		3426561C20E8017100020C3E /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561B20E8017100020C3E /* CommentsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		3426561020E4AFA100020C3E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3426561420E4B3BD00020C3E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3426561720E4BA6100020C3E /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		3426561920E8000300020C3E /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		3426561B20E8017100020C3E /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			children = (
 				3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */,
 				3426561020E4AFA100020C3E /* PostCell.swift */,
+				3426561920E8000300020C3E /* CommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			children = (
 				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
+				3426561B20E8017100020C3E /* CommentsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,8 +310,10 @@
 				3426561120E4AFA100020C3E /* PostCell.swift in Sources */,
 				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
 				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,
+				3426561C20E8017100020C3E /* CommentsVC.swift in Sources */,
 				3426561520E4B3BD00020C3E /* Post.swift in Sources */,
 				3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */,
+				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
 				342655DF20DB5D5700020C3E /* ModelController.swift in Sources */,
 				3426561820E4BA6100020C3E /* PostVC.swift in Sources */,
 				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,

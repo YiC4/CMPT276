@@ -195,42 +195,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izD-5J-xNw">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izD-5J-xNw">
                                 <rect key="frame" x="16" y="140" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="OnTextFieldTap:" destination="3xy-id-1LA" eventType="touchDown" id="9pz-Z6-Klf"/>
-                                    <action selector="onclick:" destination="3xy-id-1LA" eventType="touchDown" id="hE2-YZ-8FP"/>
-                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quesion" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2e9-4S-BwN">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2e9-4S-BwN">
                                 <rect key="frame" x="16" y="188" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="OnTextFieldTap:" destination="3xy-id-1LA" eventType="editingDidEnd" id="KUX-2b-TlM"/>
-                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-XH-3AB">
-                                <rect key="frame" x="16" y="226" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipP-rd-BFN">
+                                <rect key="frame" x="21" y="226" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Post"/>
+                                <state key="normal" title="Enter"/>
                                 <connections>
-                                    <action selector="postDidTouch:" destination="3xy-id-1LA" eventType="touchUpInside" id="Mxq-F7-wIR"/>
+                                    <action selector="OnPost:" destination="3xy-id-1LA" eventType="touchDown" id="CtY-gC-nqv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kFA-qz-Lsm"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Post" id="8vQ-B6-VYc"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="postBtn" destination="m0w-XH-3AB" id="gkm-Gf-R1X"/>
+                        <outlet property="postBtn" destination="ipP-rd-BFN" id="DNR-mx-0gg"/>
                         <outlet property="postText" destination="2e9-4S-BwN" id="6wH-y0-z9y"/>
                         <outlet property="postTitle" destination="izD-5J-xNw" id="pk5-Ny-nSn"/>
                     </connections>

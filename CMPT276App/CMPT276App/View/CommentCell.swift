@@ -7,12 +7,12 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
 class CommentCell: UITableViewCell {
 
     
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postTitle: UILabel!
     
@@ -32,7 +32,7 @@ class CommentCell: UITableViewCell {
     
     func configCell(post: Post){
         self.post = post
-        self.username.text = post.username
+        self.userID.text = post.userID
         self.postText.text = post.postText
         
         //let ref = Storage.storage().reference(forURL: post.userImg)

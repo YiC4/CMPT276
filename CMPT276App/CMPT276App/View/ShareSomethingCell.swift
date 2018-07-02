@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ShareSomethingCell: UITableViewCell {
     
@@ -24,7 +25,7 @@ class ShareSomethingCell: UITableViewCell {
     }
     
     func configCell(){
-        //TODO
+            //todo
     }
 
 }

@@ -7,18 +7,44 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class ConnectVC: UITableViewController {
+    
+    var postsRef: DatabaseReference!
+    var posts = [Post]()
+    
+    var selectedPost: Post!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        }
+        loadPosts()
+    }
     
-    func getUsersData(){
-        //TODO: GET A USER'S NAME TO POST IN FORUM
-        //HOW: INCLUDE THE KEYCHAIN AND FORCE UNWRAP THEIR USERNAME/PASS
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //download posts
+        loadPosts()
+        
+    }
+    
+    func loadPosts(){
+        postsRef = Database.database().reference().child("posts")
+        
+        postsRef.observe(.value, with: {
+            (snapshot) in
+            self.posts.removeAll()//remove to refresh
+            //print(snapshot)
+            for child in snapshot.children {
+                let childSnapshot = child as! DataSnapshot
+                let post = Post(snapshot: childSnapshot)
+                self.posts.insert(post, at: 0)
+            }
+            print(self.posts)
+            self.tableView.reloadData()
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,45 +53,31 @@ class ConnectVC: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ShareSomethingCell")
-            as? ShareSomethingCell{
-                cell.configCell()
-                cell.shareBtn.addTarget(self, action: #selector(toCreatePost), for: .touchUpInside)
-                return cell
-            }
-        }
-        return UITableViewCell()
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("InHere!@!!!")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let post = posts[indexPath.row]
+        
+        cell.post = post
+        print(post.postTitle)
+        print(post.postText)
+        print(post.userID)
+        
+        return cell
+    }
+    
     
     @objc func toCreatePost(_ sender: AnyObject){
             performSegue(withIdentifier: "toCreatePost", sender: nil)
     }
     
-    func getPosts(){//TODO: FINISH IMPLEMENTING THIS WHEN DATABASE IS UP
-        //Database.database().reference().child("posts").observeSingleEvent(of: .value){
-        //(snapshot) in code
-        //guard let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] else{return}
-        //...
-        
-    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

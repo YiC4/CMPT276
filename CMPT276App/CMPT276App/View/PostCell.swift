@@ -7,21 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCell: UITableViewCell {
     
-    @IBOutlet weak var userImg: UIImageView!
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postTitle: UILabel!
     
-    var post: Post!
-    //var userPostKey: DatabaseReference!
-    //let currentUser = KeychainWrapper.standard.string(forKey: "uid")
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var post: Post! {
+        didSet{
+            userID.text = post.userID
+            postText.text = post.postText
+            postTitle.text = post.postTitle
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,24 +29,5 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(post: Post){
-        self.post = post
-        self.username.text = post.username
-        self.postText.text = post.postText
-        
-        //let ref = Storage.storage().reference(forURL: post.userImg)
-//        ref.getData(withMaxSize: 10000000, completion: { (data, error) in
-//            if error != nil {
-//                print("Could not load image")
-//            } else {
-//                if let imgData = data {
-//                    if let img = UIImage(data: imgData){
-//                        self.userImg.image = img
-//                    }
-//                }
-//            }
-//        } )
-        
-    }
 
 }

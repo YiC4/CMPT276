@@ -7,16 +7,40 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class PostVC: UIViewController {
     
-    @IBOutlet weak var postText: UITextView!
-    @IBOutlet weak var postTitle: UITableView!
-
+    @IBOutlet weak var postTitle: UITextField!
+    @IBOutlet weak var postText: UITextField!
+    @IBOutlet weak var postBtn: UIButton!
+    
+    @IBAction func OnTitleFieldTap(_ sender: Any) {
+        postTitle.text = ""
+    }
+    @IBAction func OnTextFieldTap(_ sender: Any) {
+        postText.text = ""
+    }
+    
+    @IBAction func postDidTouch(_ sender: UIButton) {
+        if (postText.text != "" && postTitle.text != "") {
+            let newPost = Post(postTitle: postTitle.text!, postText: postText.text!, userID: "testUser")
+            newPost.save()
+            self.navigationController!.popViewController(animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        title = "Create Post"
+        
+        postText.text = "Describe"
+        postTitle.text = "Title"
+        
+        postText.becomeFirstResponder()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,26 +48,25 @@ class PostVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func post(_ sender: AnyObject){ // use [command] + "/" to uncomment/comment blocks of code
+//    @IBAction func post(_ sender: AnyObject){ // use [command] + "/" to uncomment/comment blocks of code
 //        let userID = Auth.auth().currentUser?.uid
-//        Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with {
+//        Database.database().reference().child("posts").child(userID!).observeSingleEvent(of: .value, with: {
 //            (snapshot) in
 //
 //            let data = snapshot.value as! Dictionary<String,AnyObject>
-//            let username = data["username"]
+//            let userID = data["userID"]
 //
 //            let post: Dictionary<String, AnyObject> = [
-//                "username": username as AnyObject,
+//                "userID": userID as AnyObject,
 //                "postText": self.postText.text as AnyObject,
 //                "postTitle": self.postTitle.text as AnyObject
 //            ]
 //
-//            let firebasePost = Database.database().reference().child("textPosts").childByAutoID()
-//            firebasePost.setValue(post)
+//            let firebasePost = Database.database().reference().child("posts").childByAutoId();            firebasePost.setValue(post)
 //        }) {(error) in
 //            print(error.localizedDescription)
 //        }
-    }
+//    }
     
     
 

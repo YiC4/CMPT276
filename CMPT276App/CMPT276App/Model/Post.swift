@@ -7,24 +7,19 @@
 //
 
 import Foundation
-//import Firebase
+import Firebase
 class Post{
-    private var _username: String!
-    //private var _userImg: String!
+    private var _userID: String!
     private var _postTitle: String!
     private var _postText: String!
     private var _postKey: String!
-
-    //private var _postRef: DatabaseReference!
     
+   let _postRef: DatabaseReference!
     
-    var username: String{
-        return _username
+    var userID: String{
+        return _userID
     }
     
-    //var userImg: String{
-    //    return _userImg
-    //}
     
     var postTitle: String{
         return _postTitle
@@ -38,26 +33,34 @@ class Post{
         return _postKey
     }
     
-    init(postTitle: String, postText: String, username: String){
+    init(postTitle: String, postText: String, userID: String){
         _postTitle = postTitle
         _postText = postText
-        _username = username
+        _userID = userID
+        _postRef = Database.database().reference().child("posts").childByAutoId()
     }
     
-    init(postKey: String, postData: Dictionary<String,AnyObject>){//TODO: IMPLEMENT FIREBASE FOR ADDING A POST INTO A DATABASE
-        _postKey = postKey
-        if let username = postData["username"] as? String{
-            _username = username
+    init(snapshot: DataSnapshot){
+        _postRef = snapshot.ref
+        if let value = snapshot.value as? [String : Any] {
+            _postText = value["postText"] as! String
+            _postTitle = value["postTitle"] as! String
+            _userID = value["userID"] as! String
         }
-        
-        if let postText = postData["postText"] as? String {
-            _postText = postText
-        }
-        
-        //_postRef = Database.database().reference().child("posts").child(_postKey)
-        
     }
     
+    func save() {
+        _postRef.setValue(toDictionary())
+    }
+    
+    func toDictionary() -> [String : Any]{
+        return [
+            "userID" : userID,
+            "postText" : postText,
+            "postTitle" : postTitle
+        
+        ]
+    }
     
     
 }

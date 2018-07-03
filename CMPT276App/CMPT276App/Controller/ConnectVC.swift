@@ -70,6 +70,9 @@ class ConnectVC: UITableViewController {
         return cell
     }
     
+    @IBAction func back(_ sender: AnyObject){
+        dismiss(animated: true, completion: nil)
+    }
 
 
 }

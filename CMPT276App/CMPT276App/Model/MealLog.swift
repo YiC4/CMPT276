@@ -28,7 +28,7 @@ class MealLog{
     
     init(userid: String, mealtitle: String, date: String) {//for meallog creation
         
-        _postRef = Database.database().reference().child("users").child("mealLogs")
+        _postRef = Database.database().reference().child("users").child(userid).child("mealLog").child(mealtitle)
         
         UserID = userid
         MealTitle = mealtitle

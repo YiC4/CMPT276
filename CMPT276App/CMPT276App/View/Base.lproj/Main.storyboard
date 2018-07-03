@@ -11,39 +11,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="xN4-aQ-Scc">
+        <!--Meal LogVC-->
+        <scene sceneID="7KW-W9-UbY">
             <objects>
-                <viewController id="kRP-a2-Qqq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xeN-Qp-9jO">
+                <viewController id="faA-yi-loR" customClass="MealLogVC" customModule="CMPT276App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g6a-u4-g9I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXp-ku-8gc">
-                                <rect key="frame" x="137" y="95" width="101" height="66"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meal Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-O7-Ieb">
+                                <rect key="frame" x="16" y="68" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Expecting">
-                                    <color key="titleShadowColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <attributedString key="userComments">
-                                    <fragment content="Hi">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="smallSystem"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-fp-KRA">
+                                <rect key="frame" x="16" y="20" width="61" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt; back"/>
+                                <connections>
+                                    <action selector="back:" destination="faA-yi-loR" eventType="touchUpInside" id="ZKR-MI-lfG"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjU-k4-k4n">
+                                <rect key="frame" x="155" y="407" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="OnPost:" destination="faA-yi-loR" eventType="touchDown" id="QSY-0E-ATl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-bL-WjX">
+                                <rect key="frame" x="16" y="121" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Kat-BG-JHj"/>
+                        <viewLayoutGuide key="safeArea" id="Yxe-m1-gAd"/>
                     </view>
+                    <connections>
+                        <outlet property="date" destination="kz1-bL-WjX" id="4sk-2r-J2L"/>
+                        <outlet property="mealTitle" destination="TpO-O7-Ieb" id="jVK-g2-joa"/>
+                        <outlet property="postBtn" destination="zjU-k4-k4n" id="nw1-gn-zZx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D2V-ni-7RS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FMl-Or-d2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-1078"/>
+            <point key="canvasLocation" x="1509.5999999999999" y="-984.55772113943033"/>
         </scene>
         <!--Connect-->
         <scene sceneID="jTX-If-gC8">
@@ -106,7 +124,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Connect" id="7XF-Sd-QlH">
-                        <barButtonItem key="leftBarButtonItem" title="Meal Logs" style="plain" id="Es7-SK-7hk"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Meal Logs" style="plain" id="Es7-SK-7hk">
+                            <connections>
+                                <action selector="back:" destination="mLP-QP-HRN" id="P0J-sP-6T4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="hP3-Kd-JM0">
                             <connections>
                                 <segue destination="3xy-id-1LA" kind="show" id="H4u-XJ-7Tj"/>
@@ -251,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MW8-Sg-Kf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="-197"/>
+            <point key="canvasLocation" x="1510" y="-62"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hh9-wj-hzx">
@@ -350,6 +372,9 @@
                                 <state key="normal" title="Add New">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="faA-yi-loR" kind="show" id="wFD-kt-NpN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-OC-EhN">
                                 <rect key="frame" x="140" y="78" width="94" height="44"/>
@@ -363,7 +388,7 @@
                                 <rect key="frame" x="0.0" y="269" width="375" height="398"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="CjY-42-heP" customClass="LogCell" customModule="CMPT276App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Log Cell" rowHeight="83" id="CjY-42-heP" customClass="LogCell" customModule="CMPT276App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CjY-42-heP" id="4c1-e8-xFO">
@@ -477,10 +502,51 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nEO-m7-ddX"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cUL-Tr-Z6I" id="HUN-R4-n4q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rr1-vt-tvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="464.80000000000001" y="-197.45127436281859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sa9-xa-ynw">
+            <objects>
+                <viewController id="E53-3c-WCG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPx-0Y-Lgm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-Z1-Trf">
+                                <rect key="frame" x="72" y="161" width="231" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="I am a expecting"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EB-aZ-7ka">
+                                <rect key="frame" x="16" y="20" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xjk-LP-HMl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1EB-aZ-7ka" firstAttribute="top" secondItem="6c5-71-D7d" secondAttribute="top" id="2to-38-DqS"/>
+                            <constraint firstItem="1EB-aZ-7ka" firstAttribute="leading" secondItem="QPx-0Y-Lgm" secondAttribute="leadingMargin" id="AGZ-5X-FKm"/>
+                            <constraint firstItem="6c5-71-D7d" firstAttribute="trailing" secondItem="1EB-aZ-7ka" secondAttribute="trailing" constant="289" id="Y14-hP-z9b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6c5-71-D7d"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fvR-qQ-9SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1434" y="-197"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="rKd-6j-JG8">
@@ -539,11 +605,12 @@
                                     <constraint firstAttribute="height" constant="40" id="eVB-UM-TMT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="&lt; back">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancel:" destination="Djb-QS-pET" eventType="touchUpInside" id="ikT-cR-yWw"/>
+                                    <action selector="back:" destination="Djb-QS-pET" eventType="touchUpInside" id="K3r-LI-90w"/>
+                                    <action selector="cancel:" destination="Djb-QS-pET" eventType="touchUpInside" id="0zD-bU-M7c"/>
                                 </connections>
                             </button>
                         </subviews>

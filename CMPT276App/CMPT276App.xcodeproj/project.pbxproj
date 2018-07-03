@@ -14,11 +14,13 @@
 		2B2F0A4E20EAFD3D0085AA23 /* ShowLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */; };
 		2B2F0A5020EAFD820085AA23 /* MealLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4F20EAFD820085AA23 /* MealLog.swift */; };
 		2B2F0A5220EB12A00085AA23 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5120EB12A00085AA23 /* LogCell.swift */; };
+		2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */; };
+		2B2F0A5620EB1F900085AA23 /* RoleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5520EB1F900085AA23 /* RoleVC.swift */; };
+		2B2F0A5920EB28020085AA23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5720EB28020085AA23 /* Main.storyboard */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
 		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
 		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
 		342655DF20DB5D5700020C3E /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DE20DB5D5700020C3E /* ModelController.swift */; };
-		342655E220DB5D5700020C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342655E020DB5D5700020C3E /* Main.storyboard */; };
 		342655E420DB5D5800020C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342655E320DB5D5800020C3E /* Assets.xcassets */; };
 		342655E720DB5D5800020C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342655E520DB5D5800020C3E /* LaunchScreen.storyboard */; };
 		342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655F120DB5D5800020C3E /* CMPT276AppTests.swift */; };
@@ -59,13 +61,15 @@
 		2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLogsVC.swift; sourceTree = "<group>"; };
 		2B2F0A4F20EAFD820085AA23 /* MealLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLog.swift; sourceTree = "<group>"; };
 		2B2F0A5120EB12A00085AA23 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLogVC.swift; sourceTree = "<group>"; };
+		2B2F0A5520EB1F900085AA23 /* RoleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleVC.swift; sourceTree = "<group>"; };
+		2B2F0A5820EB28020085AA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		342655DA20DB5D5700020C3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		342655DC20DB5D5700020C3E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		342655DE20DB5D5700020C3E /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		342655E120DB5D5700020C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		342655E320DB5D5800020C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342655E620DB5D5800020C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342655E820DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				3426561020E4AFA100020C3E /* PostCell.swift */,
-				342655E020DB5D5700020C3E /* Main.storyboard */,
+				2B2F0A5720EB28020085AA23 /* Main.storyboard */,
 				3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */,
 				342655E520DB5D5800020C3E /* LaunchScreen.storyboard */,
 				3426561920E8000300020C3E /* CommentCell.swift */,
@@ -203,13 +207,15 @@
 		3426561620E4BA1D00020C3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */,
-				2B2F0A4520EAF47C0085AA23 /* UserVC.swift */,
 				2B2F0A4620EAF47C0085AA23 /* ViewController.swift */,
+				2B2F0A5520EB1F900085AA23 /* RoleVC.swift */,
+				2B2F0A4520EAF47C0085AA23 /* UserVC.swift */,
+				2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */,
 				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
 				3426561B20E8017100020C3E /* CommentsVC.swift */,
 				2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */,
+				2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,7 +354,7 @@
 				342655E720DB5D5800020C3E /* LaunchScreen.storyboard in Resources */,
 				3426562020E9F78D00020C3E /* GoogleService-Info.plist in Resources */,
 				342655E420DB5D5800020C3E /* Assets.xcassets in Resources */,
-				342655E220DB5D5700020C3E /* Main.storyboard in Resources */,
+				2B2F0A5920EB28020085AA23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +468,7 @@
 				2B2F0A4A20EAF47D0085AA23 /* JourneyVC.swift in Sources */,
 				3426561C20E8017100020C3E /* CommentsVC.swift in Sources */,
 				3426561520E4B3BD00020C3E /* Post.swift in Sources */,
+				2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */,
 				3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */,
 				2B2F0A5220EB12A00085AA23 /* LogCell.swift in Sources */,
 				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
@@ -472,6 +479,7 @@
 				2B2F0A4E20EAFD3D0085AA23 /* ShowLogsVC.swift in Sources */,
 				3426561820E4BA6100020C3E /* PostVC.swift in Sources */,
 				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,
+				2B2F0A5620EB1F900085AA23 /* RoleVC.swift in Sources */,
 				342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,10 +516,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		342655E020DB5D5700020C3E /* Main.storyboard */ = {
+		2B2F0A5720EB28020085AA23 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				342655E120DB5D5700020C3E /* Base */,
+				2B2F0A5820EB28020085AA23 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

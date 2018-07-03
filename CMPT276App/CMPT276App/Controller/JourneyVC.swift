@@ -17,7 +17,8 @@ class JourneyVC: UIViewController{
     var postsRef: DatabaseReference!
     var logs = [MealLog]()
     var selectedPost: MealLog!
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,44 +44,47 @@ class JourneyVC: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //download posts
-        //loadMealLogs()
+        loadMealLogs()
 
     }
 
-//    func loadMealLogs(){
-//
-//        postsRef = Database.database().reference().child("users")
-//
-//        postsRef.observe(.value, with: {
-//            (snapshot) in
-//            self.logs.removeAll()//remove to refresh
-//            //print(snapshot)
-//            for child in snapshot.children {
-//                let childSnapshot = child as! DataSnapshot
-//                let log = MealLog(snapshot: childSnapshot)
-//                self.logs.insert(log, at: 0)
-//            }
-//            print(self.logs)
-//            self.tableView.reloadData()
-//        })
-//
-//    }
+    func loadMealLogs(){
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return logs.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath) as! LogCell
-//        let log = logs[indexPath.row]
-//
-//        cell.mealLog = log
-//
-//        return cell
-//    }
+        postsRef = Database.database().reference().child("users").child("Melissa").child("mealLog")
+
+        postsRef.observe(.value, with: {
+            (snapshot) in
+            self.logs.removeAll()//remove to refresh
+            //print(snapshot)
+            for child in snapshot.children {
+                let childSnapshot = child as! DataSnapshot
+                let log = MealLog(snapshot: childSnapshot)
+                self.logs.insert(log, at: 0)
+                print(log.MealTitle)
+            }
+            self.tableView.reloadData()
+            print(self.logs)
+           
+        })
+
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return logs.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("in here")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath as IndexPath) as! LogCell
+        let log = logs[indexPath.row]
+
+        cell.mealLog = log
+
+        return cell
+    }
 
 }

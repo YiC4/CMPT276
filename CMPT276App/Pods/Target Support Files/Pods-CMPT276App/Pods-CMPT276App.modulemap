@@ -1,0 +1,6 @@
+framework module Pods_CMPT276App {
+  umbrella header "Pods-CMPT276App-umbrella.h"
+
+  export *
+  module * { export * }
+}

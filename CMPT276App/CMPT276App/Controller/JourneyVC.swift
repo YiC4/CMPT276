@@ -66,6 +66,7 @@ class JourneyVC: UIViewController{
             print(self.logs)
            
         })
+        tableView.reloadData()
 
     }
 
@@ -79,7 +80,7 @@ class JourneyVC: UIViewController{
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("in here")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath as IndexPath) as! LogCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Log Cell", for: indexPath as IndexPath) as! LogCell
         let log = logs[indexPath.row]
 
         cell.mealLog = log

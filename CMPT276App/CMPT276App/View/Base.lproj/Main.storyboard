@@ -283,6 +283,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="CrE-li-I6M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDR-WO-nWH">
                                 <rect key="frame" x="16" y="411" width="343" height="50"/>
                                 <constraints>
@@ -315,31 +319,22 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-g2-kE8">
-                                <rect key="frame" x="16" y="143" width="343" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="nlr-WH-yh9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Cw-Kyz">
+                                <rect key="frame" x="16" y="353" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.81877489280000004" blue="0.82629729630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="nDR-WO-nWH" secondAttribute="trailing" constant="16" id="2AL-Ji-2tJ"/>
                             <constraint firstItem="nDR-WO-nWH" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="2Ef-Kd-K8X"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="bottom" secondItem="APu-0e-jrs" secondAttribute="bottom" constant="98" id="4KT-cA-h3B"/>
-                            <constraint firstItem="Zsu-gF-gIl" firstAttribute="top" secondItem="zlz-g2-kE8" secondAttribute="bottom" constant="130" id="8Yf-3z-jsd"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="APu-0e-jrs" secondAttribute="trailing" constant="16" id="DGG-be-LK8"/>
                             <constraint firstItem="Zsu-gF-gIl" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="Fpv-71-jac"/>
                             <constraint firstItem="nDR-WO-nWH" firstAttribute="top" secondItem="Zsu-gF-gIl" secondAttribute="bottom" constant="8" id="IXV-l8-UvV"/>
-                            <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="zlz-g2-kE8" secondAttribute="trailing" constant="16" id="Jfo-Ys-AOB"/>
                             <constraint firstItem="APu-0e-jrs" firstAttribute="top" secondItem="nDR-WO-nWH" secondAttribute="bottom" constant="58" id="PKc-7F-zBa"/>
                             <constraint firstItem="APu-0e-jrs" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="a5I-IG-mTD"/>
-                            <constraint firstItem="zlz-g2-kE8" firstAttribute="top" secondItem="bQz-Gh-aNP" secondAttribute="top" constant="123" id="dnv-RQ-Wut"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="Zsu-gF-gIl" secondAttribute="trailing" constant="16" id="r55-3k-zS5"/>
-                            <constraint firstItem="zlz-g2-kE8" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="wzB-8o-dtk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQz-Gh-aNP"/>
                     </view>
@@ -352,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBg-gh-zUn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-561" y="-197"/>
+            <point key="canvasLocation" x="-562.39999999999998" y="-197.45127436281859"/>
         </scene>
         <!--JourneyVC-->
         <scene sceneID="Rle-wb-C1z">
@@ -650,5 +645,9 @@
             <point key="canvasLocation" x="465" y="601"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1080" height="1920"/>
+        <image name="Email" width="700" height="120"/>
+    </resources>
     <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

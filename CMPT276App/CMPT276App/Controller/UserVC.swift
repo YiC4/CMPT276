@@ -1,10 +1,12 @@
 //
 //  UserVC.swift
-//  P
+//
 //
 //  Created by Lcy on 2018/7/2.
+//  Editor: Melissa Lee
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
+//  Usage: Creating new user
 
 import UIKit
 import Firebase
@@ -34,9 +36,10 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imagePicker.allowsEditing = true
         // Do any additional setup after loading the view.
     }
-
-    func keychain(){
-        KeychainWrapper.standard.set(userUid, forKey: "uid")
+    
+    //Save user id for screen to go straight to journey logs
+    func keychain(){ //TODO: MAKE THIS MORE FUNCTIONAL
+        //KeychainWrapper.standard.set(emailField, forKey: "uid")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -52,13 +55,15 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func setUpUser(img: String){
         let userData = [
             "username": username!,
-            "userImg": img
+            "userImg": img,
+            "mealLog": "..."
         ]
         keychain()
-        let setLocation = Database.database().reference().child("users").child(userUid)
+        let setLocation = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
         setLocation.setValue(userData)
     }
     
+    //Upload Image for Firebase Account
     func uploadImg() {
         if usernameField.text == nil {
             print("must have username")
@@ -97,7 +102,8 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
         }
     }
-        
+    
+    //Completed Account - Create Firebase User
     @IBAction func compeleteAccount(_ sender: Any){
         Auth.auth().createUser(withEmail: emailField, password: passwordField, completion: {(user, error) in
             if error != nil {
@@ -121,22 +127,5 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         dismiss(animated: true, completion: nil)
     }
 
-
-    
-    /*override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }*/
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

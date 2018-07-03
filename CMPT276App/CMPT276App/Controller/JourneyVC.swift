@@ -5,41 +5,84 @@
 //  Created by Lcy on 2018/7/2.
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
+//  Usage: Populates With Meal Logs
 
 import UIKit
 import FirebaseAuth
+import Firebase
 import SwiftKeychainWrapper
 
 
-class JourneyVC: UIViewController {
+class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    var postsRef: DatabaseReference! //Database reference
+    var logs = [MealLog]()           //List of all mealogs
+    @IBOutlet weak var tableView: UITableView! //Table View which is populated by meal logs
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     @IBAction func SignOut (_ sender: AnyObject) {
         try! Auth.auth().signOut()
-        
+
         KeychainWrapper.standard.removeObject(forKey: "uid")
-        
+
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        loadMealLogs()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    //Loads Meal logs in TableView
+    func loadMealLogs(){
+        
+        postsRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog")
+        
+        postsRef.observe(.value, with: {
+            (snapshot) in
+            self.logs.removeAll()//remove to refresh
+            //print(snapshot)
+            for child in snapshot.children {
+                let childSnapshot = child as! DataSnapshot
+                let log = MealLog(snapshot: childSnapshot)
+                self.logs.insert(log, at: 0)
+                print(log.MealTitle)
+            }
+            self.tableView.reloadData()
+            print(self.logs)
+            
+        })
+        tableView.reloadData()
+        
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return logs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("in here")
+        let cell = tableView.dequeueReusableCell(withIdentifier:"Log Cell", for: indexPath as IndexPath) as! LogCell
+        let log = logs[indexPath.row]
+        
+        cell.mealLog = log
+        return cell
+        
+    }
 
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 import Firebase
-class Post{
+class Post{ // Forum Post Data Structure
+    
     private var _userID: String!
     private var _postTitle: String!
     private var _postText: String!

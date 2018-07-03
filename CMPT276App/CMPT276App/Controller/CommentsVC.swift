@@ -5,20 +5,19 @@
 //  Created by Melissa Lee on 2018-06-30.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
+//
 
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class CommentsVC: UITableViewController {
+class CommentsVC: UITableViewController {// TODO: CREATE COMMENTS THAT ATTACH TO POST
     
     var post: Post!
     var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getComments()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,18 +25,6 @@ class CommentsVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getComments() {
-//        Database.database().reference().child("post").child(post.postKey).child("comments").observeSingleEvent(of: .value) { (snapshot) in
-//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
-//            self.posts.removeAll()
-//            for data in snapshot.reversed() {
-//                guard let postDict = data.value as? Dictionary<String, AnyObject> else { return }
-//                let post = Post(postKey: data.key, postData: postDict)
-//                self.posts.append(post)
-//            }
-//            self.tableView.reloadData()
-//        }
-    }
 
     // MARK: - Table view data source
 

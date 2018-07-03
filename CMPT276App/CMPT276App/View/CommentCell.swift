@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CommentCell: UITableViewCell {
+class CommentCell: UITableViewCell {//TODO: CREATE THIS COMMENT CELL
 
     
     @IBOutlet weak var userID: UILabel!

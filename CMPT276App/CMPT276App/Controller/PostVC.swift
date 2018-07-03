@@ -5,6 +5,7 @@
 //  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
+//  Usage: Creates Posts with Title, Text, and User ID
 
 import UIKit
 import Firebase
@@ -18,6 +19,7 @@ class PostVC: UIViewController {
 
     
     @IBAction func OnPost(_ sender: UIButton) {
+
         if (postText.text != "" && postTitle.text != "") {
             let newPost = Post(postTitle: postTitle.text!, postText: postText.text!, userID: "testUser")
             newPost.save()

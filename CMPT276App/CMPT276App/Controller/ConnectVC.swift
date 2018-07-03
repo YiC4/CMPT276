@@ -5,6 +5,7 @@
 //  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
+//  Usage: Populates TableView with Forum Posts
 
 import UIKit
 import Firebase
@@ -14,8 +15,6 @@ class ConnectVC: UITableViewController {
     
     var postsRef: DatabaseReference!
     var posts = [Post]()
-    
-    var selectedPost: Post!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +27,10 @@ class ConnectVC: UITableViewController {
         
     }
     
+    //Loads Forum Posts
     func loadPosts(){
-
+        print("Posts - userId")
+        print(Auth.auth().currentUser!.uid)
         postsRef = Database.database().reference().child("posts")
         
         postsRef.observe(.value, with: {
@@ -41,7 +42,6 @@ class ConnectVC: UITableViewController {
                 let post = Post(snapshot: childSnapshot)
                 self.posts.insert(post, at: 0)
             }
-            print(self.posts)
             self.tableView.reloadData()
         })
         
@@ -60,6 +60,7 @@ class ConnectVC: UITableViewController {
         return posts.count
     }
     
+    //Loads Forum Posts and populates table
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
@@ -72,11 +73,9 @@ class ConnectVC: UITableViewController {
         return cell
     }
     
-    
-    @objc func toCreatePost(_ sender: AnyObject){
-            performSegue(withIdentifier: "toCreatePost", sender: nil)
+    @IBAction func back(_ sender: AnyObject){
+        dismiss(animated: true, completion: nil)
     }
-    
 
 
 }

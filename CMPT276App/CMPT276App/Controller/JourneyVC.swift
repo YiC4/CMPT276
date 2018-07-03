@@ -8,14 +8,15 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 import SwiftKeychainWrapper
 
 
 class JourneyVC: UIViewController{
 
-    //var postsRef: DatabaseReference!
-    //var logs = [Log]()
-    //var selectedPost: MealLog!
+    var postsRef: DatabaseReference!
+    var logs = [MealLog]()
+    var selectedPost: MealLog!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,57 +40,47 @@ class JourneyVC: UIViewController{
     ///
     ///
     ///
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        //download posts
-//        loadMealLogs()
-//
-//    }
-//
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //download posts
+        //loadMealLogs()
+
+    }
+
 //    func loadMealLogs(){
 //
 //        postsRef = Database.database().reference().child("users")
 //
 //        postsRef.observe(.value, with: {
 //            (snapshot) in
-//            self.posts.removeAll()//remove to refresh
+//            self.logs.removeAll()//remove to refresh
 //            //print(snapshot)
 //            for child in snapshot.children {
 //                let childSnapshot = child as! DataSnapshot
-//                let post = Post(snapshot: childSnapshot)
-//                self.posts.insert(post, at: 0)
+//                let log = MealLog(snapshot: childSnapshot)
+//                self.logs.insert(log, at: 0)
 //            }
-//            print(self.posts)
+//            print(self.logs)
 //            self.tableView.reloadData()
 //        })
 //
 //    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//
+
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        return 1
 //    }
 //
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return posts.count
+//        return logs.count
 //    }
 //
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-//        let post = posts[indexPath.row]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath) as! LogCell
+//        let log = logs[indexPath.row]
 //
-//        cell.post = post
+//        cell.mealLog = log
 //
 //        return cell
-//    }
-//
-//
-//    @objc func toCreatePost(_ sender: AnyObject){
-//        performSegue(withIdentifier: "toCreatePost", sender: nil)
 //    }
 
 }

@@ -14,8 +14,6 @@ class ConnectVC: UITableViewController {
     
     var postsRef: DatabaseReference!
     var posts = [Post]()
-    
-    var selectedPost: Post!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,11 +68,6 @@ class ConnectVC: UITableViewController {
         print(post.userID)
         
         return cell
-    }
-    
-    
-    @objc func toCreatePost(_ sender: AnyObject){
-            performSegue(withIdentifier: "toCreatePost", sender: nil)
     }
     
 

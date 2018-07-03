@@ -29,9 +29,9 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.standard.string(forKey: "users"){
-            goToJourneyVC()
-        }
+//        if let _ = KeychainWrapper.standard.string(forKey: "users"){
+//            goToJourneyVC()
+//        }
     }
     
     func goToCreateUserVC(){

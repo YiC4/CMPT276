@@ -340,39 +340,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dY-8C-Gko">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8U-PW-nGo">
-                                        <rect key="frame" x="71" y="28" width="233" height="42"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj4-fN-kOj">
-                                        <rect key="frame" x="318" y="18" width="57" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Logout">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SignOut:" destination="chO-6y-wtR" eventType="touchUpInside" id="YRC-GN-P3R"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.28627450980000002" green="0.81877489280000004" blue="0.82629729630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="x8U-PW-nGo" secondAttribute="bottom" id="BF8-gj-AsA"/>
-                                    <constraint firstItem="Kj4-fN-kOj" firstAttribute="leading" secondItem="x8U-PW-nGo" secondAttribute="trailing" constant="14" id="Ctm-ed-kmH"/>
-                                    <constraint firstAttribute="trailing" secondItem="x8U-PW-nGo" secondAttribute="trailing" constant="71" id="HWE-gB-ITZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kj4-fN-kOj" secondAttribute="trailing" id="N6X-d3-MIi"/>
-                                    <constraint firstAttribute="bottom" secondItem="x8U-PW-nGo" secondAttribute="bottom" id="Uoz-A7-Qtb"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kj4-fN-kOj" secondAttribute="bottom" constant="22" id="XZR-K1-O5p"/>
-                                    <constraint firstItem="Kj4-fN-kOj" firstAttribute="top" secondItem="7dY-8C-Gko" secondAttribute="top" constant="18" id="dnr-co-lzW"/>
-                                    <constraint firstItem="x8U-PW-nGo" firstAttribute="top" secondItem="7dY-8C-Gko" secondAttribute="top" constant="28" id="fgs-cp-Tex"/>
-                                    <constraint firstItem="x8U-PW-nGo" firstAttribute="leading" secondItem="7dY-8C-Gko" secondAttribute="leading" constant="71" id="pH6-FK-GwB"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wr-KF-iNR">
                                 <rect key="frame" x="111" y="176" width="153" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -396,7 +363,7 @@
                                 <rect key="frame" x="0.0" y="269" width="375" height="398"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="CjY-42-heP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="83" id="CjY-42-heP" customClass="LogCell" customModule="CMPT276App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CjY-42-heP" id="4c1-e8-xFO">
@@ -449,9 +416,47 @@
                                                 <constraint firstItem="af1-IE-pVr" firstAttribute="centerX" secondItem="8Fu-N0-vOK" secondAttribute="centerX" constant="1" id="wEu-0X-gRX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="8Fu-N0-vOK" id="anP-fU-YUh"/>
+                                            <outlet property="mealTitle" destination="af1-IE-pVr" id="baj-mx-pc4"/>
+                                            <outlet property="symptoms" destination="fhe-W4-N4Z" id="PQd-RH-i66"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dY-8C-Gko">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8U-PW-nGo">
+                                        <rect key="frame" x="71" y="28" width="233" height="42"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj4-fN-kOj">
+                                        <rect key="frame" x="318" y="18" width="57" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignOut:" destination="chO-6y-wtR" eventType="touchUpInside" id="YRC-GN-P3R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.81877489280000004" blue="0.82629729630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="x8U-PW-nGo" secondAttribute="bottom" id="BF8-gj-AsA"/>
+                                    <constraint firstItem="Kj4-fN-kOj" firstAttribute="leading" secondItem="x8U-PW-nGo" secondAttribute="trailing" constant="14" id="Ctm-ed-kmH"/>
+                                    <constraint firstAttribute="trailing" secondItem="x8U-PW-nGo" secondAttribute="trailing" constant="71" id="HWE-gB-ITZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kj4-fN-kOj" secondAttribute="trailing" id="N6X-d3-MIi"/>
+                                    <constraint firstAttribute="bottom" secondItem="x8U-PW-nGo" secondAttribute="bottom" id="Uoz-A7-Qtb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kj4-fN-kOj" secondAttribute="bottom" constant="22" id="XZR-K1-O5p"/>
+                                    <constraint firstItem="Kj4-fN-kOj" firstAttribute="top" secondItem="7dY-8C-Gko" secondAttribute="top" constant="18" id="dnr-co-lzW"/>
+                                    <constraint firstItem="x8U-PW-nGo" firstAttribute="top" secondItem="7dY-8C-Gko" secondAttribute="top" constant="28" id="fgs-cp-Tex"/>
+                                    <constraint firstItem="x8U-PW-nGo" firstAttribute="leading" secondItem="7dY-8C-Gko" secondAttribute="leading" constant="71" id="pH6-FK-GwB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.89832899310000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

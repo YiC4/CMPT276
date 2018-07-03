@@ -36,7 +36,7 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
 
     func keychain(){
-        KeychainWrapper.standard.set(userUid, forKey: "uid")
+        //KeychainWrapper.standard.set(userUid, forKey: "uid")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -53,7 +53,6 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let userData = [
             "username": username!,
             "userImg": img,
-            "mealLog": nil
         ]
         keychain()
         let setLocation = Database.database().reference().child("users").child(username)

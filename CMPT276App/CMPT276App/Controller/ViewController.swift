@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.standard.string(forKey: "uid"){
+        if let _ = KeychainWrapper.standard.string(forKey: "users"){
             goToJourneyVC()
         }
     }

@@ -52,10 +52,11 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func setUpUser(img: String){
         let userData = [
             "username": username!,
-            "userImg": img
+            "userImg": img,
+            "mealLog": nil
         ]
         keychain()
-        let setLocation = Database.database().reference().child("users").child(userUid)
+        let setLocation = Database.database().reference().child("users").child(username)
         setLocation.setValue(userData)
     }
     

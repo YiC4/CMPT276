@@ -11,6 +11,8 @@
 		2B2F0A4820EAF47D0085AA23 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4520EAF47C0085AA23 /* UserVC.swift */; };
 		2B2F0A4920EAF47D0085AA23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4620EAF47C0085AA23 /* ViewController.swift */; };
 		2B2F0A4A20EAF47D0085AA23 /* JourneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */; };
+		2B2F0A4E20EAFD3D0085AA23 /* ShowLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */; };
+		2B2F0A5020EAFD820085AA23 /* MealLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A4F20EAFD820085AA23 /* MealLog.swift */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
 		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
 		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
@@ -53,6 +55,8 @@
 		2B2F0A4520EAF47C0085AA23 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		2B2F0A4620EAF47C0085AA23 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyVC.swift; sourceTree = "<group>"; };
+		2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLogsVC.swift; sourceTree = "<group>"; };
+		2B2F0A4F20EAFD820085AA23 /* MealLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLog.swift; sourceTree = "<group>"; };
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				3426561420E4B3BD00020C3E /* Post.swift */,
+				2B2F0A4F20EAFD820085AA23 /* MealLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
 				3426561B20E8017100020C3E /* CommentsVC.swift */,
+				2B2F0A4D20EAFD3D0085AA23 /* ShowLogsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,8 +462,10 @@
 				3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */,
 				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
 				2B2F0A4820EAF47D0085AA23 /* UserVC.swift in Sources */,
+				2B2F0A5020EAFD820085AA23 /* MealLog.swift in Sources */,
 				2B2F0A4920EAF47D0085AA23 /* ViewController.swift in Sources */,
 				342655DF20DB5D5700020C3E /* ModelController.swift in Sources */,
+				2B2F0A4E20EAFD3D0085AA23 /* ShowLogsVC.swift in Sources */,
 				3426561820E4BA6100020C3E /* PostVC.swift in Sources */,
 				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,
 				342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */,

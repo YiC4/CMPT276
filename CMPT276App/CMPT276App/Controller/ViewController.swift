@@ -12,15 +12,18 @@ import Firebase
 import FirebaseAuth
 import SwiftKeychainWrapper
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     var userUid: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,6 +31,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return(true)
+    }
+    
+
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "user"){

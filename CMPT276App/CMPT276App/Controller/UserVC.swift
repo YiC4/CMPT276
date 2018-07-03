@@ -1,10 +1,12 @@
 //
 //  UserVC.swift
-//  P
+//
 //
 //  Created by Lcy on 2018/7/2.
+//  Editor: Melissa Lee
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
+//  Usage: Creating new user
 
 import UIKit
 import Firebase
@@ -36,7 +38,7 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
 
     func keychain(){
-        //KeychainWrapper.standard.set(userUid, forKey: "uid")
+        KeychainWrapper.standard.set(emailField, forKey: "uid")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

@@ -448,6 +448,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="chO-6y-wtR" id="dFd-JJ-hJP"/>
+                                    <outlet property="delegate" destination="chO-6y-wtR" id="ohw-Kl-2hE"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dY-8C-Gko">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>

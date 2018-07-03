@@ -1,10 +1,11 @@
 //
 //  ViewController.swift
-//  P
+//
 //
 //  Created by Lcy on 2018/7/1.
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
+//  Usage: View controller is the log in screen
 
 import UIKit
 import Firebase

@@ -2,7 +2,7 @@
 //  CMPT276AppTests.swift
 //  CMPT276AppTests
 //
-//  Created by Michael Lee on 2018-06-20.
+//  Created by Melissa Lee on 2018-06-20.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
 

@@ -5,6 +5,7 @@
 //  Created by Lcy on 2018/7/2.
 //  Copyright © 2018年 Nurture. All rights reserved.
 //
+//  Usage: will determine if user is dietition or expecting
 
 import UIKit
 

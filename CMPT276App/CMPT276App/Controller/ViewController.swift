@@ -60,8 +60,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signInTapped(_ sender: Any){
-        if let email = emailField.text, let password = passwordField.text {
-            Auth.auth().signIn(withEmail: email, password: password, completion:
+        let email = emailField.text
+        let password = passwordField.text
+        if email != "" && password != ""{
+            Auth.auth().signIn(withEmail: email!, password: password!, completion:
                 { (user,error) in
                 if error == nil {
                     if let user = user {

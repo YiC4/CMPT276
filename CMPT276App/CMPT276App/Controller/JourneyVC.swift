@@ -21,8 +21,6 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +39,8 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //download posts
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         loadMealLogs()
 
     }
@@ -50,23 +49,24 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     func loadMealLogs(){
         
         postsRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog")
-
+        
         postsRef.observe(.value, with: {
             (snapshot) in
             self.logs.removeAll()//remove to refresh
+            //print(snapshot)
             for child in snapshot.children {
                 let childSnapshot = child as! DataSnapshot
                 let log = MealLog(snapshot: childSnapshot)
                 self.logs.insert(log, at: 0)
                 print(log.MealTitle)
             }
+            self.tableView.reloadData()
             print(self.logs)
-           self.tableView.reloadData()
+            
         })
         tableView.reloadData()
-
+        
     }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -77,12 +77,12 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("in here")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Log Cell", for: indexPath as IndexPath) as! LogCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:"Log Cell", for: indexPath as IndexPath) as! LogCell
         let log = logs[indexPath.row]
         
         cell.mealLog = log
-        
         return cell
+        
     }
 
 }

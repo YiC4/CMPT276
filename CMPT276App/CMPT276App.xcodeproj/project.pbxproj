@@ -181,11 +181,11 @@
 		3426561220E4B02B00020C3E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B2F0A5120EB12A00085AA23 /* LogCell.swift */,
 				3426561020E4AFA100020C3E /* PostCell.swift */,
 				2B2F0A5720EB28020085AA23 /* Main.storyboard */,
 				342655E520DB5D5800020C3E /* LaunchScreen.storyboard */,
 				3426561920E8000300020C3E /* CommentCell.swift */,
-				2B2F0A5120EB12A00085AA23 /* LogCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,8 +193,8 @@
 		3426561320E4B3A200020C3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3426561420E4B3BD00020C3E /* Post.swift */,
 				2B2F0A4F20EAFD820085AA23 /* MealLog.swift */,
+				3426561420E4B3BD00020C3E /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				2B2F0A4620EAF47C0085AA23 /* ViewController.swift */,
+				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				2B2F0A5520EB1F900085AA23 /* RoleVC.swift */,
 				2B2F0A4520EAF47C0085AA23 /* UserVC.swift */,
 				2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */,
-				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
 				3426561B20E8017100020C3E /* CommentsVC.swift */,
 				2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */,

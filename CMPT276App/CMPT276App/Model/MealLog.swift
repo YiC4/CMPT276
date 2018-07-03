@@ -28,8 +28,7 @@ class MealLog{ // Meal Log Data Structure
     let _postRef: DatabaseReference!
     
     init(userid: String, mealtitle: String, date: String) {//for meallog creation
-        
-        UserID = Auth.auth().currentUser!.uid
+        UserID = userid
         MealTitle = mealtitle
         Date = date
         
@@ -43,7 +42,7 @@ class MealLog{ // Meal Log Data Structure
         Foodaversion = false
         Cravings = false
         Backpain = false
-        _postRef = Database.database().reference().child("users").child(userid).child("mealLog").child(mealtitle)
+        _postRef = Database.database().reference().child("users").child(UserID).child("mealLog").child(mealtitle)
     }
     
     init(snapshot: DataSnapshot){

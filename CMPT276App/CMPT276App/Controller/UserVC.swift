@@ -15,7 +15,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import SwiftKeychainWrapper
 
-class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var userImagePicker: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
@@ -31,10 +31,21 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.usernameField.delegate = self
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameField.resignFirstResponder()
+        return(true)
     }
     
     //Save user id for screen to go straight to journey logs

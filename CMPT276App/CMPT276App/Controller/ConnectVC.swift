@@ -19,7 +19,6 @@ class ConnectVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,6 +29,7 @@ class ConnectVC: UITableViewController {
     }
     
     func loadPosts(){
+
         postsRef = Database.database().reference().child("posts")
         
         postsRef.observe(.value, with: {
@@ -61,7 +61,6 @@ class ConnectVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("InHere!@!!!")
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
         

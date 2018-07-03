@@ -10,6 +10,7 @@
 import UIKit
 import Firebase
 
+//Formats A Post Cell with title, text, and userID
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var userID: UILabel!

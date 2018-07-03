@@ -5,8 +5,10 @@
 //  Created by Lcy on 2018/7/2.
 //  Copyright © 2018年 Nurture. All rights reserved.
 //
+//  Usage: allows user to create meal log
 
 import UIKit
+import FirebaseAuth
 
 class MealLogVC: UIViewController {
 
@@ -17,7 +19,8 @@ class MealLogVC: UIViewController {
     
     @IBAction func OnPost(_ sender: UIButton) {
         if (mealTitle.text != "") {
-            let newLog = MealLog(userid: "Melissa", mealtitle: mealTitle.text!, date: date.text!)
+            let user = Auth.auth().currentUser!.uid
+            let newLog = MealLog(userid: user, mealtitle: mealTitle.text!, date: date.text!)
             newLog.save()
             dismiss(animated: true, completion: nil)
         }

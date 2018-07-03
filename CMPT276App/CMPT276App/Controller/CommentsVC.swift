@@ -5,12 +5,13 @@
 //  Created by Melissa Lee on 2018-06-30.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
+//
 
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class CommentsVC: UITableViewController {
+class CommentsVC: UITableViewController {// TODO: CREATE COMMENTS THAT ATTACH TO POST
     
     var post: Post!
     var posts = [Post]()

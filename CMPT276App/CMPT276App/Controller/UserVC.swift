@@ -36,9 +36,10 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imagePicker.allowsEditing = true
         // Do any additional setup after loading the view.
     }
-
-    func keychain(){
-        KeychainWrapper.standard.set(emailField, forKey: "uid")
+    
+    //Save user id for screen to go straight to journey logs
+    func keychain(){ //TODO: MAKE THIS MORE FUNCTIONAL
+        //KeychainWrapper.standard.set(emailField, forKey: "uid")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -58,10 +59,11 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             "mealLog": "..."
         ]
         keychain()
-        let setLocation = Database.database().reference().child("users").child(username)
+        let setLocation = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
         setLocation.setValue(userData)
     }
     
+    //Upload Image for Firebase Account
     func uploadImg() {
         if usernameField.text == nil {
             print("must have username")
@@ -100,7 +102,8 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
         }
     }
-        
+    
+    //Completed Account - Create Firebase User
     @IBAction func compeleteAccount(_ sender: Any){
         Auth.auth().createUser(withEmail: emailField, password: passwordField, completion: {(user, error) in
             if error != nil {

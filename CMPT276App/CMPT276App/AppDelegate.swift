@@ -6,9 +6,6 @@
 //  Copyright © 2018 Nurture. All rights reserved.
 //
 
-//let testPost = Post(postTitle: "This is title", postText: "This is title", userID: "this is userID")
-//testPost.save()
-
 import UIKit
 import Firebase
 
@@ -20,9 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        FirebaseApp.configure()
+        
+        FirebaseApp.configure() //IMPORTANT: CONFIGURES DATABASE BEFORE ANYTHING IS USED
+        
         return true
+        
     }
     
     

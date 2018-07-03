@@ -25,7 +25,6 @@
 		342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655F120DB5D5800020C3E /* CMPT276AppTests.swift */; };
 		342655FD20DB5D5800020C3E /* CMPT276AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */; };
 		3426560B20E493A000020C3E /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560A20E493A000020C3E /* ConnectVC.swift */; };
-		3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */; };
 		3426561120E4AFA100020C3E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561020E4AFA100020C3E /* PostCell.swift */; };
 		3426561520E4B3BD00020C3E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561420E4B3BD00020C3E /* Post.swift */; };
 		3426561820E4BA6100020C3E /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561720E4BA6100020C3E /* PostVC.swift */; };
@@ -78,7 +77,6 @@
 		342655FC20DB5D5800020C3E /* CMPT276AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMPT276AppUITests.swift; sourceTree = "<group>"; };
 		342655FE20DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3426560A20E493A000020C3E /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
-		3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSomethingCell.swift; sourceTree = "<group>"; };
 		3426561020E4AFA100020C3E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3426561420E4B3BD00020C3E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3426561720E4BA6100020C3E /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			children = (
 				3426561020E4AFA100020C3E /* PostCell.swift */,
 				2B2F0A5720EB28020085AA23 /* Main.storyboard */,
-				3426560E20E4A39C00020C3E /* ShareSomethingCell.swift */,
 				342655E520DB5D5800020C3E /* LaunchScreen.storyboard */,
 				3426561920E8000300020C3E /* CommentCell.swift */,
 				2B2F0A5120EB12A00085AA23 /* LogCell.swift */,
@@ -466,7 +463,6 @@
 				3426561C20E8017100020C3E /* CommentsVC.swift in Sources */,
 				3426561520E4B3BD00020C3E /* Post.swift in Sources */,
 				2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */,
-				3426560F20E4A39C00020C3E /* ShareSomethingCell.swift in Sources */,
 				2B2F0A5220EB12A00085AA23 /* LogCell.swift in Sources */,
 				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
 				2B2F0A4820EAF47D0085AA23 /* UserVC.swift in Sources */,

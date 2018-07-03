@@ -8,7 +8,8 @@
 
 import Foundation
 import Firebase
-class MealLog{
+class MealLog{ // Meal Log Data Structure
+    
     var UserID: String!
     var MealTitle: String!
     var Date: String!
@@ -28,9 +29,7 @@ class MealLog{
     
     init(userid: String, mealtitle: String, date: String) {//for meallog creation
         
-        _postRef = Database.database().reference().child("users").child(userid).child("mealLog").child(mealtitle)
-        
-        UserID = userid
+        UserID = Auth.auth().currentUser!.uid
         MealTitle = mealtitle
         Date = date
         
@@ -44,6 +43,7 @@ class MealLog{
         Foodaversion = false
         Cravings = false
         Backpain = false
+        _postRef = Database.database().reference().child("users").child(userid).child("mealLog").child(mealtitle)
     }
     
     init(snapshot: DataSnapshot){

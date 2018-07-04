@@ -5,14 +5,14 @@
 //  Created by Lcy on 2018/7/2.
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
-//  Usage: Populates With Meal Logs
+
 
 import UIKit
 import FirebaseAuth
 import Firebase
 import SwiftKeychainWrapper
 
-
+//  Usage: Populates With Meal Logs
 class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     var postsRef: DatabaseReference! //Database reference
@@ -28,7 +28,7 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         // Dispose of any resources that can be recreated.
     }
 
-
+    //Logout button is clicked and we change the authentication for the user
     @IBAction func SignOut (_ sender: AnyObject) {
         try! Auth.auth().signOut()
 

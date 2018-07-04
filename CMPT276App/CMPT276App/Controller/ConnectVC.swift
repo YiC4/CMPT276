@@ -5,12 +5,13 @@
 //  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
-//  Usage: Populates TableView with Forum Posts
+
 
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
+//  Usage: Populates TableView with Forum Posts
 class ConnectVC: UITableViewController {
     
     var postsRef: DatabaseReference!

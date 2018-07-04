@@ -6,7 +6,7 @@
 //  Editor: Melissa Lee
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
-//  Usage: Creating new user
+
 
 import UIKit
 import Firebase
@@ -15,6 +15,8 @@ import FirebaseDatabase
 import FirebaseStorage
 import SwiftKeychainWrapper
 
+//  Usage: Creating new user
+//  This page called when the database does not contain the email or password
 class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var userImagePicker: UIImageView!

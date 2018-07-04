@@ -9,7 +9,7 @@
 
 import UIKit
 
-//Formats Meal Log Cell
+//Formats Meal Log Cell in the UI
 class LogCell: UITableViewCell {
     
     @IBOutlet weak var mealTitle: UILabel!

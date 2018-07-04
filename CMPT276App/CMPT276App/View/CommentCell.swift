@@ -35,18 +35,5 @@ class CommentCell: UITableViewCell {//TODO: CREATE THIS COMMENT CELL
         self.userID.text = post.userID
         self.postText.text = post.postText
         
-        //let ref = Storage.storage().reference(forURL: post.userImg)
-        //        ref.getData(withMaxSize: 10000000, completion: { (data, error) in
-        //            if error != nil {
-        //                print("Could not load image")
-        //            } else {
-        //                if let imgData = data {
-        //                    if let img = UIImage(data: imgData){
-        //                        self.userImg.image = img
-        //                    }
-        //                }
-        //            }
-        //        } )
-        
     }
 }

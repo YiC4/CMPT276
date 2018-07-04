@@ -5,26 +5,27 @@
 //  Created by Lcy on 2018/7/1.
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
-//  Usage: View controller is the log in screen
+
 
 import UIKit
 import Firebase
 import FirebaseAuth
 import SwiftKeychainWrapper
 
+//  Usage: View controller is the log in screen
 class ViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     var userUid: String!
-
+    
+    //when we load in, we set the emailfield delegate and password delegate to this view controller
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +44,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
 
-    
-    override func viewDidAppear(_ animated: Bool) {
+    //if the user is signed in, take user to journey page
+    override func viewDidAppear(_ animated: Bool) { //TODO: implement this to work
         if let _ = KeychainWrapper.standard.string(forKey: "user"){
             goToJourneyVC()
         }
@@ -58,6 +59,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         performSegue(withIdentifier: "ToFeed", sender: nil)
     }
     
+    //prepare to send the email and password to the userVC page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignUp" {
             if let destination = segue.destination as? UserVC {
@@ -74,6 +76,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    //When the user taps 'sign in' it takes them to the journey page if they are registered
+    //If the user did not have a profile, we create them one
     @IBAction func signInTapped(_ sender: Any){
         let email = emailField.text
         let password = passwordField.text

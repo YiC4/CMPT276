@@ -5,19 +5,19 @@
 //  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
-//  Usage: Creates Posts with Title, Text, and User ID
 
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
+//  Usage: Creates Posts with Title, Text, and User ID
 class PostVC: UIViewController {
     
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postText: UITextField!
     @IBOutlet weak var postBtn: UIButton!
 
-    
+    //When you hit post to create a forum post, the forum post will write to the realtime database and then display in the main page
     @IBAction func OnPost(_ sender: UIButton) {
 
         if (postText.text != "" && postTitle.text != "") {

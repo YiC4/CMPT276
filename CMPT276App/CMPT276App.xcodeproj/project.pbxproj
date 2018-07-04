@@ -17,9 +17,6 @@
 		2B2F0A5620EB1F900085AA23 /* RoleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5520EB1F900085AA23 /* RoleVC.swift */; };
 		2B2F0A5920EB28020085AA23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5720EB28020085AA23 /* Main.storyboard */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
-		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
-		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
-		342655DF20DB5D5700020C3E /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DE20DB5D5700020C3E /* ModelController.swift */; };
 		342655E420DB5D5800020C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342655E320DB5D5800020C3E /* Assets.xcassets */; };
 		342655E720DB5D5800020C3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342655E520DB5D5800020C3E /* LaunchScreen.storyboard */; };
 		342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655F120DB5D5800020C3E /* CMPT276AppTests.swift */; };
@@ -31,6 +28,10 @@
 		3426561A20E8000300020C3E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561920E8000300020C3E /* CommentCell.swift */; };
 		3426561C20E8017100020C3E /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426561B20E8017100020C3E /* CommentsVC.swift */; };
 		3426562020E9F78D00020C3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3426561F20E9F78D00020C3E /* GoogleService-Info.plist */; };
+		34A0F2D220EC499600372B4C /* JourneyVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0F2D120EC499600372B4C /* JourneyVCTests.swift */; };
+		34A0F2D420EC52DC00372B4C /* ConnectVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0F2D320EC52DC00372B4C /* ConnectVCTests.swift */; };
+		34A0F2D620EC54FF00372B4C /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0F2D520EC54FF00372B4C /* ViewControllerTests.swift */; };
+		34A0F2D820EC568E00372B4C /* UserVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0F2D720EC568E00372B4C /* UserVCTests.swift */; };
 		B511B9D847D61F5B372A34B9 /* Pods_CMPT276AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C146571DF4BF2ACD92DC742 /* Pods_CMPT276AppUITests.framework */; };
 		B54342AE32CE570E7D45252B /* Pods_CMPT276AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607B25F306DA49AE81C9A913 /* Pods_CMPT276AppTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,9 +65,6 @@
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		342655DA20DB5D5700020C3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		342655DC20DB5D5700020C3E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		342655DE20DB5D5700020C3E /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		342655E320DB5D5800020C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342655E620DB5D5800020C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342655E820DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +81,10 @@
 		3426561920E8000300020C3E /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		3426561B20E8017100020C3E /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		3426561F20E9F78D00020C3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34A0F2D120EC499600372B4C /* JourneyVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyVCTests.swift; sourceTree = "<group>"; };
+		34A0F2D320EC52DC00372B4C /* ConnectVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVCTests.swift; sourceTree = "<group>"; };
+		34A0F2D520EC54FF00372B4C /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		34A0F2D720EC568E00372B4C /* UserVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVCTests.swift; sourceTree = "<group>"; };
 		405F4AA21CE8A203E49B18C8 /* Pods-CMPT276App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276App/Pods-CMPT276App.release.xcconfig"; sourceTree = "<group>"; };
 		607B25F306DA49AE81C9A913 /* Pods_CMPT276AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMPT276AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C146571DF4BF2ACD92DC742 /* Pods_CMPT276AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMPT276AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,9 +152,6 @@
 				3426561320E4B3A200020C3E /* Model */,
 				3426561220E4B02B00020C3E /* View */,
 				342655D820DB5D5700020C3E /* AppDelegate.swift */,
-				342655DA20DB5D5700020C3E /* RootViewController.swift */,
-				342655DC20DB5D5700020C3E /* DataViewController.swift */,
-				342655DE20DB5D5700020C3E /* ModelController.swift */,
 				342655E320DB5D5800020C3E /* Assets.xcassets */,
 				3426561F20E9F78D00020C3E /* GoogleService-Info.plist */,
 				342655E820DB5D5800020C3E /* Info.plist */,
@@ -165,6 +164,10 @@
 			children = (
 				342655F120DB5D5800020C3E /* CMPT276AppTests.swift */,
 				342655F320DB5D5800020C3E /* Info.plist */,
+				34A0F2D120EC499600372B4C /* JourneyVCTests.swift */,
+				34A0F2D320EC52DC00372B4C /* ConnectVCTests.swift */,
+				34A0F2D520EC54FF00372B4C /* ViewControllerTests.swift */,
+				34A0F2D720EC568E00372B4C /* UserVCTests.swift */,
 			);
 			path = CMPT276AppTests;
 			sourceTree = "<group>";
@@ -457,7 +460,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3426561120E4AFA100020C3E /* PostCell.swift in Sources */,
-				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
 				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,
 				2B2F0A4A20EAF47D0085AA23 /* JourneyVC.swift in Sources */,
 				3426561C20E8017100020C3E /* CommentsVC.swift in Sources */,
@@ -468,9 +470,7 @@
 				2B2F0A4820EAF47D0085AA23 /* UserVC.swift in Sources */,
 				2B2F0A5020EAFD820085AA23 /* MealLog.swift in Sources */,
 				2B2F0A4920EAF47D0085AA23 /* ViewController.swift in Sources */,
-				342655DF20DB5D5700020C3E /* ModelController.swift in Sources */,
 				3426561820E4BA6100020C3E /* PostVC.swift in Sources */,
-				342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */,
 				2B2F0A5620EB1F900085AA23 /* RoleVC.swift in Sources */,
 				342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */,
 			);
@@ -481,6 +481,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */,
+				34A0F2D420EC52DC00372B4C /* ConnectVCTests.swift in Sources */,
+				34A0F2D620EC54FF00372B4C /* ViewControllerTests.swift in Sources */,
+				34A0F2D820EC568E00372B4C /* UserVCTests.swift in Sources */,
+				34A0F2D220EC499600372B4C /* JourneyVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

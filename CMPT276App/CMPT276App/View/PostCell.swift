@@ -5,10 +5,12 @@
 //  Created by Melissa Lee on 2018-06-27.
 //  Copyright © 2018 Nurture. All rights reserved.
 //
+//
 
 import UIKit
 import Firebase
 
+//Formats A Post Cell with title, text, and userID
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var userID: UILabel!
@@ -26,7 +28,6 @@ class PostCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 

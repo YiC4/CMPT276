@@ -10,14 +10,16 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
+//  Usage: Creates Posts with Title, Text, and User ID
 class PostVC: UIViewController {
     
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postText: UITextField!
     @IBOutlet weak var postBtn: UIButton!
 
-    
+    //When you hit post to create a forum post, the forum post will write to the realtime database and then display in the main page
     @IBAction func OnPost(_ sender: UIButton) {
+
         if (postText.text != "" && postTitle.text != "") {
             let newPost = Post(postTitle: postTitle.text!, postText: postText.text!, userID: "testUser")
             newPost.save()

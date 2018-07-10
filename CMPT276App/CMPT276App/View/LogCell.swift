@@ -3,11 +3,13 @@
 //  CMPT276App
 //
 //  Created by Lcy on 2018/7/2.
+//  Edited: Melissa Lee
 //  Copyright © 2018年 Nurture. All rights reserved.
 //
 
 import UIKit
 
+//Formats Meal Log Cell in the UI
 class LogCell: UITableViewCell {
     
     @IBOutlet weak var mealTitle: UILabel!

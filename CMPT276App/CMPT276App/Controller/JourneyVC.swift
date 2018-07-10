@@ -6,23 +6,21 @@
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
 
+
 import UIKit
 import FirebaseAuth
 import Firebase
 import SwiftKeychainWrapper
 
+//  Usage: Populates With Meal Logs
+class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-class JourneyVC: UIViewController{
-
-    var postsRef: DatabaseReference!
-    var logs = [MealLog]()
-    var selectedPost: MealLog!
-    @IBOutlet weak var tableView: UITableView!
+    var postsRef: DatabaseReference! //Database reference
+    var logs = [MealLog]()           //List of all mealogs
+    @IBOutlet weak var tableView: UITableView! //Table View which is populated by meal logs
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +28,7 @@ class JourneyVC: UIViewController{
         // Dispose of any resources that can be recreated.
     }
 
-
+    //Logout button is clicked and we change the authentication for the user
     @IBAction func SignOut (_ sender: AnyObject) {
         try! Auth.auth().signOut()
 
@@ -38,20 +36,20 @@ class JourneyVC: UIViewController{
 
         dismiss(animated: true, completion: nil)
     }
-    ///
-    ///
-    ///
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //download posts
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         loadMealLogs()
 
     }
-
+    
+    //Loads Meal logs in TableView
     func loadMealLogs(){
-
-        postsRef = Database.database().reference().child("users").child("Melissa").child("mealLog")
-
+        
+        postsRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog")
+        
         postsRef.observe(.value, with: {
             (snapshot) in
             self.logs.removeAll()//remove to refresh
@@ -64,28 +62,27 @@ class JourneyVC: UIViewController{
             }
             self.tableView.reloadData()
             print(self.logs)
-           
+            
         })
         tableView.reloadData()
-
+        
     }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logs.count
     }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("in here")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Log Cell", for: indexPath as IndexPath) as! LogCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:"Log Cell", for: indexPath as IndexPath) as! LogCell
         let log = logs[indexPath.row]
-
+        
         cell.mealLog = log
-
         return cell
+        
     }
 
 }

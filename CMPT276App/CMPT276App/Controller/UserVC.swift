@@ -1,10 +1,12 @@
 //
 //  UserVC.swift
-//  P
+//
 //
 //  Created by Lcy on 2018/7/2.
+//  Editor: Melissa Lee
 //  Copyright © 2018年 Lcy. All rights reserved.
 //
+
 
 import UIKit
 import Firebase
@@ -13,7 +15,9 @@ import FirebaseDatabase
 import FirebaseStorage
 import SwiftKeychainWrapper
 
-class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//  Usage: Creating new user
+//  This page called when the database does not contain the email or password
+class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var userImagePicker: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
@@ -29,14 +33,26 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.usernameField.delegate = self
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         // Do any additional setup after loading the view.
     }
-
-    func keychain(){
-        //KeychainWrapper.standard.set(userUid, forKey: "uid")
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameField.resignFirstResponder()
+        return(true)
+    }
+    
+    //Save user id for screen to go straight to journey logs
+    func keychain(){ //TODO: MAKE THIS MORE FUNCTIONAL
+        //KeychainWrapper.standard.set(emailField, forKey: "uid")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -56,10 +72,11 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             "mealLog": "..."
         ]
         keychain()
-        let setLocation = Database.database().reference().child("users").child(username)
+        let setLocation = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
         setLocation.setValue(userData)
     }
     
+    //Upload Image for Firebase Account
     func uploadImg() {
         if usernameField.text == nil {
             print("must have username")
@@ -98,7 +115,8 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
         }
     }
-        
+    
+    //Completed Account - Create Firebase User
     @IBAction func compeleteAccount(_ sender: Any){
         Auth.auth().createUser(withEmail: emailField, password: passwordField, completion: {(user, error) in
             if error != nil {

@@ -2,15 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Sign up_.png",
+      "filename" : "Background2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-<<<<<<< HEAD
-      "filename" : "Sign up.png",
-=======
->>>>>>> master
       "scale" : "2x"
     },
     {

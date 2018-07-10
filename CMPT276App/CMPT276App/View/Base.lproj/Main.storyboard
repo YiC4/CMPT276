@@ -304,6 +304,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="outsidepassword:" destination="p6Z-ak-TQT" eventType="touchDragOutside" id="bCb-PI-IMT"/>
+                                    <action selector="outsidepasswordWithSender:" destination="p6Z-ak-TQT" eventType="editingDidEnd" id="tSs-ud-tnZ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zsu-gF-gIl">
                                 <rect key="frame" x="16" y="317" width="343" height="50"/>
@@ -328,17 +332,46 @@
                                     <action selector="signInTapped:" destination="p6Z-ak-TQT" eventType="touchUpInside" id="hhH-Gg-sjV"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zsu-gF-gIl">
+                                <rect key="frame" x="16" y="353" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ngm-wy-qnT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-Cw-Kyz">
+                                <rect key="frame" x="16" y="353" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="CrE-li-I6M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-hF-qvJ">
                                 <rect key="frame" x="16" y="136.5" width="343" height="61.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+>>>>>>> master
                         </subviews>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.81877489280000004" blue="0.82629729630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="nDR-WO-nWH" secondAttribute="trailing" constant="16" id="2AL-Ji-2tJ"/>
                             <constraint firstItem="nDR-WO-nWH" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="2Ef-Kd-K8X"/>
+<<<<<<< HEAD
+                            <constraint firstItem="bQz-Gh-aNP" firstAttribute="bottom" secondItem="APu-0e-jrs" secondAttribute="bottom" constant="98" id="4KT-cA-h3B"/>
+                            <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="APu-0e-jrs" secondAttribute="trailing" constant="16" id="DGG-be-LK8"/>
+                            <constraint firstItem="Zsu-gF-gIl" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="Fpv-71-jac"/>
+                            <constraint firstItem="nDR-WO-nWH" firstAttribute="top" secondItem="Zsu-gF-gIl" secondAttribute="bottom" constant="8" id="IXV-l8-UvV"/>
+                            <constraint firstItem="APu-0e-jrs" firstAttribute="top" secondItem="nDR-WO-nWH" secondAttribute="bottom" constant="58" id="PKc-7F-zBa"/>
+                            <constraint firstItem="APu-0e-jrs" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="a5I-IG-mTD"/>
+                            <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="Zsu-gF-gIl" secondAttribute="trailing" constant="16" id="r55-3k-zS5"/>
+=======
                             <constraint firstItem="APu-0e-jrs" firstAttribute="trailing" secondItem="Zsu-gF-gIl" secondAttribute="trailing" id="AdH-sY-xad"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="bottom" secondItem="APu-0e-jrs" secondAttribute="bottom" constant="108" id="CUE-wJ-8Ja"/>
                             <constraint firstItem="Zsu-gF-gIl" firstAttribute="leading" secondItem="bQz-Gh-aNP" secondAttribute="leading" constant="16" id="Fpv-71-jac"/>
@@ -353,6 +386,7 @@
                             <constraint firstItem="nDR-WO-nWH" firstAttribute="top" secondItem="Zsu-gF-gIl" secondAttribute="bottom" constant="8" id="oZ9-wD-6Jk"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="Zsu-gF-gIl" secondAttribute="trailing" constant="16" id="r55-3k-zS5"/>
                             <constraint firstItem="bQz-Gh-aNP" firstAttribute="trailing" secondItem="eUz-hF-qvJ" secondAttribute="trailing" constant="16" id="uEJ-79-20C"/>
+>>>>>>> master
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQz-Gh-aNP"/>
                     </view>
@@ -634,6 +668,10 @@
     </scenes>
     <resources>
         <image name="Background" width="1080" height="1920"/>
+<<<<<<< HEAD
+        <image name="Email" width="700" height="120"/>
+=======
+>>>>>>> master
     </resources>
     <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

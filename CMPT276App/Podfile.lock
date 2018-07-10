@@ -1,4 +1,5 @@
 PODS:
+  - CheckBox (0.1.2)
   - Firebase/Auth (5.4.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.2)
@@ -44,6 +45,7 @@ PODS:
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
+  - CheckBox
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -52,6 +54,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CheckBox
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -66,6 +69,7 @@ SPEC REPOS:
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
+  CheckBox: 9231523d31e1f372f1762180573385e114ce8efe
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseAuth: 096e457cdd4274412a66c4a35874787e411f5a03
@@ -79,6 +83,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: bbaca7de0ffd5a0fce6eed8012bbf4f1f913c1e6
+PODFILE CHECKSUM: 6cc804baae477b198a75533f612d875452634702
 
 COCOAPODS: 1.5.3

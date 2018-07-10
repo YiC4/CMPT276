@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
     func goToJourneyVC() {
-        performSegue(withIdentifier: "ToFeed", sender: nil)
+        performSegue(withIdentifier: "SignIn", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,6 +74,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    
     @IBAction func signInTapped(_ sender: Any){
         let email = emailField.text
         let password = passwordField.text
@@ -86,10 +87,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
                         self.goToJourneyVC()
                     }
                 } else {
-                    self.goToCreateUserVC()
+                    AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
+                    //self.goToCreateUserVC()
                 }
 
             });
+        }  else {
+            AlertController.showAlert(self, title: "Missing Info", message: "Please fill out all fields")
         }
     }
     

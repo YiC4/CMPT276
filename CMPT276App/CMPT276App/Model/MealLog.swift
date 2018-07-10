@@ -24,6 +24,8 @@ class MealLog{ // Meal Log Data Structure
     var Cravings: Bool!
     var Backpain: Bool!
     
+    //var trimester: int!
+    
     
     let _postRef: DatabaseReference!
     

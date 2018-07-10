@@ -16,6 +16,7 @@
 		2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */; };
 		2B2F0A5620EB1F900085AA23 /* RoleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5520EB1F900085AA23 /* RoleVC.swift */; };
 		2B2F0A5920EB28020085AA23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5720EB28020085AA23 /* Main.storyboard */; };
+		2B2F0A5B20ED70100085AA23 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5A20ED70100085AA23 /* AlertController.swift */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
 		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
 		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
@@ -61,6 +62,7 @@
 		2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLogVC.swift; sourceTree = "<group>"; };
 		2B2F0A5520EB1F900085AA23 /* RoleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleVC.swift; sourceTree = "<group>"; };
 		2B2F0A5820EB28020085AA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B2F0A5A20ED70100085AA23 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,13 +205,14 @@
 			isa = PBXGroup;
 			children = (
 				2B2F0A4620EAF47C0085AA23 /* ViewController.swift */,
-				3426560A20E493A000020C3E /* ConnectVC.swift */,
-				2B2F0A5520EB1F900085AA23 /* RoleVC.swift */,
 				2B2F0A4520EAF47C0085AA23 /* UserVC.swift */,
+				2B2F0A5520EB1F900085AA23 /* RoleVC.swift */,
+				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				2B2F0A4720EAF47D0085AA23 /* JourneyVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
 				3426561B20E8017100020C3E /* CommentsVC.swift */,
 				2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */,
+				2B2F0A5A20ED70100085AA23 /* AlertController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CMPT276App/Pods-CMPT276App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CheckBox/CheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -438,6 +442,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -463,6 +468,7 @@
 				3426561C20E8017100020C3E /* CommentsVC.swift in Sources */,
 				3426561520E4B3BD00020C3E /* Post.swift in Sources */,
 				2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */,
+				2B2F0A5B20ED70100085AA23 /* AlertController.swift in Sources */,
 				2B2F0A5220EB12A00085AA23 /* LogCell.swift in Sources */,
 				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
 				2B2F0A4820EAF47D0085AA23 /* UserVC.swift in Sources */,

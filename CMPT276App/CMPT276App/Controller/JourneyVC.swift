@@ -17,6 +17,15 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     var postsRef: DatabaseReference! //Database reference
     var logs = [MealLog]()           //List of all mealogs
+    var BloatingLogs = [MealLog]()
+    var FatigueLogs = [MealLog]()
+    var SwollenbreastsLogs = [MealLog]()
+    var MorningsicknessLogs = [MealLog]()
+    var FrequenturinationLogs = [MealLog]()
+    var SpottingLogs = [MealLog]()
+    var FoodaversionLogs = [MealLog]()
+    var CravingsLogs = [MealLog]()
+    var BackpainLogs = [MealLog]()
     @IBOutlet weak var tableView: UITableView! //Table View which is populated by meal logs
     
     override func viewDidLoad() {
@@ -36,6 +45,10 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
         dismiss(animated: true, completion: nil)
     }
+    //Perform segment to journey graph
+    @IBAction func ToJourneyGraph(_ sender: Any) {
+        performSegue(withIdentifier: "toJourneyGraph", sender: nil)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -43,6 +56,22 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.tableView.dataSource = self
         loadMealLogs()
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toJourneyGraph" {
+            if let destination = segue.destination as? JourneyGraphVC {
+                destination.logs = logs
+                destination.BloatingLogs = BloatingLogs
+                destination.FatigueLogs = FatigueLogs
+                destination.SwollenbreastsLogs = SwollenbreastsLogs
+                destination.MorningsicknessLogs = MorningsicknessLogs
+                destination.FrequenturinationLogs = FrequenturinationLogs
+                destination.SpottingLogs = SpottingLogs
+                destination.FoodaversionLogs = FoodaversionLogs
+                destination.CravingsLogs = CravingsLogs
+                destination.BackpainLogs = BackpainLogs
+            }
+        }
     }
     
     //Loads Meal logs in TableView
@@ -58,6 +87,51 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 let childSnapshot = child as! DataSnapshot
                 let log = MealLog(snapshot: childSnapshot)
                 self.logs.insert(log, at: 0)
+                
+                if(log.Bloating){
+                    self.BloatingLogs.insert(log, at: 0)
+                }
+                if(log.Fatigue){
+                    self.FatigueLogs.insert(log, at: 0)
+                }
+                
+                if(log.Swollenbreasts){
+                    self.SwollenbreastsLogs.insert(log, at: 0)
+                }
+                
+                if(log.Morningsickness){
+                    self.MorningsicknessLogs.insert(log, at: 0)
+                }
+                
+                if(log.Frequenturination){
+                    self.FrequenturinationLogs.insert(log, at: 0)
+                }
+                
+                if(log.Spotting){
+                    self.SpottingLogs.insert(log, at: 0)
+                }
+                
+                if(log.Frequenturination){
+                    self.FrequenturinationLogs.insert(log, at: 0)
+                }
+                
+                if(log.Spotting){
+                    self.SpottingLogs.insert(log, at: 0)
+                }
+                
+                if(log.Foodaversion){
+                    self.FoodaversionLogs.insert(log, at: 0)
+                }
+                
+                if(log.Cravings){
+                    self.CravingsLogs.insert(log, at: 0)
+                }
+                
+                if(log.Backpain){
+                    self.BackpainLogs.insert(log, at: 0)
+                }
+                
+                
                 print(log.MealTitle)
             }
             self.tableView.reloadData()

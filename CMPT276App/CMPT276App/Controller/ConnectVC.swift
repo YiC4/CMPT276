@@ -13,9 +13,11 @@ import SwiftKeychainWrapper
 
 class ConnectVC: UITableViewController {
     
+    @IBOutlet var postview: UITableView!
     var postsRef: DatabaseReference!
     var posts = [Post]()
-
+    var myindex: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,28 +27,28 @@ class ConnectVC: UITableViewController {
         //download posts
         loadPosts()
         
+        
     }
     
     //Loads Forum Posts
     func loadPosts(){
-        print("Posts - userId")
-        print(Auth.auth().currentUser!.uid)
         postsRef = Database.database().reference().child("posts")
         
         postsRef.observe(.value, with: {
             (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as?[DataSnapshot] else {return}
             self.posts.removeAll()//remove to refresh
             //print(snapshot)
-            for child in snapshot.children {
-                let childSnapshot = child as! DataSnapshot
-                let post = Post(snapshot: childSnapshot)
-                self.posts.insert(post, at: 0)
+            for data in snapshot.reversed() {
+                guard let postdict = data.value as? Dictionary<String,AnyObject> else {return}
+                let post = Post(postKey: data.key, postData: postdict)
+                self.posts.append(post)
             }
             self.tableView.reloadData()
         })
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,12 +68,24 @@ class ConnectVC: UITableViewController {
         let post = posts[indexPath.row]
         
         cell.post = post
-        print(post.postTitle)
-        print(post.postText)
-        print(post.userID)
-        
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myindex = indexPath.row
+        performSegue(withIdentifier: "tocomments", sender: posts[myindex])
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tocomments" {
+            if let destination = segue.destination as? CommentsVC {
+                destination.post = self.posts[myindex]
+            }
+        }
+    }
+    @IBAction func back(_ sender: AnyObject){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

@@ -78,12 +78,13 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     //Upload Image for Firebase Account
     func uploadImg() {
         if usernameField.text == nil {
-            print("must have username")
+            AlertController.showAlert(self, title: "Missing Info", message: "Please enter the username")
             completeSignInBtn.isEnabled = false
         } else {
             username = usernameField.text
             completeSignInBtn.isEnabled = true
         }
+        
         guard let img = userImagePicker.image, imageSelected == true else {
             print("image must be selected")
             return
@@ -94,7 +95,7 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             let metadata = StorageMetadata()
             metadata.contentType = "img/jpeg/png"
             
-            let storageItem = Storage.storage().reference().child(imgUid)
+            let storageItem = Storage.storage().reference().child("ProfileImg").child(imgUid)
             storageItem.putData(imgData, metadata: metadata) {
                 (metadata, error) in
                 if error != nil {
@@ -119,7 +120,7 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBAction func compeleteAccount(_ sender: Any){
         Auth.auth().createUser(withEmail: emailField, password: passwordField, completion: {(user, error) in
             if error != nil {
-                print("cant create userString(describing: error)")
+                print("can't create userString(describing: error)")
             }else {
                 if let user = user {
                     self.userUid = user.user.uid

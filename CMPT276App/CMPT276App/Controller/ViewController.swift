@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         self.emailField.delegate = self
         self.passwordField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +89,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     }
                 } else {
                     AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
-                    //self.goToCreateUserVC()
                 }
 
             });

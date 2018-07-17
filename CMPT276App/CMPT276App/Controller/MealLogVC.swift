@@ -9,6 +9,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
 class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -23,10 +24,12 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     var Foodaversion: Bool!
     var Cravings: Bool!
     var Backpain: Bool!
+    var mealImg: String!
     
     @IBOutlet weak var mealTitle: UITextField!
     @IBOutlet weak var date: UITextField!
     @IBOutlet weak var postBtn: UIButton!
+    @IBOutlet weak var trimester: UITextField!
     
     @IBOutlet weak var imageViewer: UIImageView!
     
@@ -63,7 +66,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         imageViewer.image = image
-        
+        uploadMealImg()
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -71,11 +74,42 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func uploadMealImg(){
+        guard let img = imageViewer.image else{
+            print("image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            let imgUid = NSUUID().uuidString
+            let metadata = StorageMetadata()
+            metadata.contentType = "img/jpeg/png"
+            
+            let storageItem = Storage.storage().reference().child("MealImg").child(imgUid)
+            storageItem.putData(imgData, metadata: metadata) {
+                (metadata, error) in
+                if error != nil {
+                    print("Couldn't upload Image")
+                } else {
+                    print("Uploaded")
+                    storageItem.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print(error!)
+                            return
+                        }
+                        if url != nil {
+                            self.mealImg = url?.absoluteString
+                        }
+                    })
+                }
+            }
+        }
+    }
     
     @IBAction func OnPost(_ sender: UIButton) {
         if (mealTitle.text != "") {
             let user = Auth.auth().currentUser!.uid
-            let newLog = MealLog(userid: user, mealtitle: mealTitle.text!, date: date.text!)
+            let newLog = MealLog(userid: user, mealtitle: mealTitle.text!, date: date.text!, trimester: trimester.text!, mealImg: mealImg)
             
             if Bloating == true {newLog.Bloating = true}
             if Fatigue == true {newLog.Fatigue = true}
@@ -87,9 +121,10 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             if Cravings == true {newLog.Cravings = true}
             if Backpain == true {newLog.Backpain = true}
             if Frequenturination == true {newLog.Frequenturination = true}
-            
+    
             newLog.save()
-            dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     override func viewDidLoad() {

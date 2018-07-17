@@ -81,9 +81,6 @@ class SymptomVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    @IBAction func backtograph(_ sender: Any) {
-        performSegue(withIdentifier: "tojourneygraph", sender: nil)
-    }
-    
+
 
 }

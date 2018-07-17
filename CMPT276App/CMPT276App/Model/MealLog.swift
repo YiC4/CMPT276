@@ -13,6 +13,9 @@ class MealLog{ // Meal Log Data Structure
     var UserID: String!
     var MealTitle: String!
     var Date: String!
+    var Trimester: String!
+    var MealImg: String!
+    
     var Bloating: Bool!
     var Fatigue: Bool!
     var Swollenbreasts: Bool!
@@ -24,15 +27,15 @@ class MealLog{ // Meal Log Data Structure
     var Cravings: Bool!
     var Backpain: Bool!
     
-    //var trimester: int!
-    
     
     let _postRef: DatabaseReference!
     
-    init(userid: String, mealtitle: String, date: String) {//for meallog creation
+    init(userid: String, mealtitle: String, date: String, trimester: String, mealImg: String) {//for meallog creation
         UserID = userid
         MealTitle = mealtitle
         Date = date
+        Trimester = trimester
+        MealImg = mealImg
         
         Bloating = false
         Fatigue = false
@@ -44,6 +47,7 @@ class MealLog{ // Meal Log Data Structure
         Foodaversion = false
         Cravings = false
         Backpain = false
+       
         _postRef = Database.database().reference().child("users").child(UserID).child("mealLog").child(mealtitle)
     }
     
@@ -53,6 +57,8 @@ class MealLog{ // Meal Log Data Structure
             UserID = value["UserID"] as! String
             MealTitle = value["MealTitle"] as! String
             Date = value["Date"] as! String
+            Trimester = value["Trimester"] as! String
+            MealImg = value["MealImg"] as! String
             
             Bloating = value["Bloating"] as! Bool
             Fatigue = value["Fatigue"] as! Bool
@@ -75,6 +81,9 @@ class MealLog{ // Meal Log Data Structure
             "UserID" : UserID,
             "MealTitle" : MealTitle,
             "Date" : Date,
+            "Trimester" : Trimester,
+            "MealImg": MealImg,
+            
             "Bloating": Bloating,
             "Fatigue": Fatigue,
             "Swollenbreasts" : Swollenbreasts,

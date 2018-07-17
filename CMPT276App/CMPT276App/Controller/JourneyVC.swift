@@ -36,15 +36,7 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    @IBAction func SignOut (_ sender: AnyObject) {
-        try! Auth.auth().signOut()
-
-        KeychainWrapper.standard.removeObject(forKey: "uid")
-
-        dismiss(animated: true, completion: nil)
-    }
+    
     //Perform segment to journey graph
     @IBAction func ToJourneyGraph(_ sender: Any) {
         performSegue(withIdentifier: "toJourneyGraph", sender: nil)
@@ -72,6 +64,7 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 destination.BackpainLogs = BackpainLogs
             }
         }
+        
     }
     
     //Loads Meal logs in TableView
@@ -149,14 +142,64 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return logs.count
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("in here")
         let cell = tableView.dequeueReusableCell(withIdentifier:"Log Cell", for: indexPath as IndexPath) as! LogCell
-        let log = logs[indexPath.row]
         
-        cell.mealLog = log
+        cell.mealLog = logs[indexPath.row]
         return cell
-        
     }
+    
+    
+    //Pass data to DetailVC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let DvC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        
+        DvC.getMeatTitle = logs[indexPath.row].MealTitle
+        DvC.getDate = logs[indexPath.row].Date
+//        DvC.getBloating = logs[indexPath.row].Bloating
+//        DvC.getFatigue = logs[indexPath.row].Fatigue
+//        DvC.getSwollenbreasts = logs[indexPath.row].Swollenbreasts
+//        DvC.getMorningsickness = logs[indexPath.row].Morningsickness
+//        DvC.getFrequenturination = logs[indexPath.row].Frequenturination
+//        DvC.getSpotting = logs[indexPath.row].Spotting
+//        DvC.getFoodaversion = logs[indexPath.row].Foodaversion
+//        DvC.getCravings = logs[indexPath.row].Cravings
+//        DvC.getBackpain = logs[indexPath.row].Backpain
+        DvC.getTrimester = logs[indexPath.row].Trimester
+        
+        //Download image through URL
+        let urlKey = logs[indexPath.row].MealImg
+        
+        if let url = URL(string: urlKey!){
+            do {
+                let data = try Data(contentsOf: url)
+                DvC.getImage = UIImage(data: data)!
+            }catch {
+                print(" Error ")
+            }
+        }
+        
+
+        self.navigationController?.pushViewController(DvC, animated: true)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

@@ -1381,14 +1381,33 @@
                                                     <action selector="BackPainTapped:" destination="2AF-7o-RJe" eventType="touchUpInside" id="UCX-OQ-6HL"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Journey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VU-YY-duo">
+                                                <rect key="frame" x="133" y="24" width="110" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="See your top symptoms throughout your pregnancy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eom-yx-rg3">
+                                                <rect key="frame" x="67" y="46" width="240" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eom-yx-rg3" secondAttribute="trailing" constant="68" id="0eV-Eg-NSv"/>
+                                            <constraint firstItem="ekn-gx-t1e" firstAttribute="top" secondItem="eom-yx-rg3" secondAttribute="bottom" constant="27" id="166-V1-JO8"/>
                                             <constraint firstAttribute="trailing" secondItem="ekn-gx-t1e" secondAttribute="trailing" constant="16" id="3Yv-kd-MFP"/>
                                             <constraint firstItem="ekn-gx-t1e" firstAttribute="leading" secondItem="iVC-NS-brN" secondAttribute="leading" constant="16" id="E6D-nd-iPa"/>
                                             <constraint firstAttribute="height" constant="1000" id="EDF-SL-xFp"/>
+                                            <constraint firstItem="3VU-YY-duo" firstAttribute="top" secondItem="iVC-NS-brN" secondAttribute="top" constant="24" id="EqY-ce-kWg"/>
+                                            <constraint firstItem="3VU-YY-duo" firstAttribute="leading" secondItem="iVC-NS-brN" secondAttribute="leading" constant="133" id="H8j-A3-Sx5"/>
                                             <constraint firstItem="ekn-gx-t1e" firstAttribute="centerY" secondItem="iVC-NS-brN" secondAttribute="centerY" constant="-178.5" id="HPX-Ic-aLQ"/>
                                             <constraint firstItem="ekn-gx-t1e" firstAttribute="top" secondItem="iVC-NS-brN" secondAttribute="top" constant="115" id="J8W-E5-BQL"/>
+                                            <constraint firstAttribute="trailing" secondItem="3VU-YY-duo" secondAttribute="trailing" constant="132" id="lK1-2G-oPG"/>
+                                            <constraint firstItem="eom-yx-rg3" firstAttribute="leading" secondItem="iVC-NS-brN" secondAttribute="leading" constant="67" id="oLP-Sa-kEG"/>
+                                            <constraint firstItem="eom-yx-rg3" firstAttribute="top" secondItem="3VU-YY-duo" secondAttribute="bottom" constant="1.5" id="tub-xE-ll4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1431,7 +1450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioW-uE-pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3894" y="-290"/>
+            <point key="canvasLocation" x="3893.5999999999999" y="-290.55472263868069"/>
         </scene>
         <!--SymptomVC-->
         <scene sceneID="aU5-GO-ddR">

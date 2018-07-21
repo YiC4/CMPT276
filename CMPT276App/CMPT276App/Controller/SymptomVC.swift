@@ -47,16 +47,14 @@ class SymptomVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var t3: Int!
     
     //once symptoms load, lead the logs, then load the graph
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        barChart.chartDescription?.text = "Trimester Graph"
         SymptomTitle.text = symptomtitle
         TotalLogs.text = "Total Logs: " + String(totalLogs.count)
         TimesLogged.text = "Times Symptom logged: " + String(symptomLogs.count)
         loadLogs()
         updateChartData()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     }
     
     func updateChartData(){
@@ -72,6 +70,7 @@ class SymptomVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         xAxis.labelPosition = .bottom
         xAxis.labelFont = .systemFont(ofSize: 9)
         xAxis.granularity = 1
+    
         
         barChart.pinchZoomEnabled = false
         barChart.doubleTapToZoomEnabled = false

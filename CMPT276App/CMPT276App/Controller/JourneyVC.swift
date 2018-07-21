@@ -100,10 +100,6 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     self.FrequenturinationLogs.insert(log, at: 0)
                 }
                 
-                if(log.Spotting){
-                    self.SpottingLogs.insert(log, at: 0)
-                }
-                
                 if(log.Frequenturination){
                     self.FrequenturinationLogs.insert(log, at: 0)
                 }

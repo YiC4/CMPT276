@@ -18,6 +18,7 @@
 		2B2F0A5B20ED70100085AA23 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5A20ED70100085AA23 /* AlertController.swift */; };
 		2B31D1D020F86D4100166B59 /* JourneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B31D1CF20F86D4100166B59 /* JourneyVC.swift */; };
 		2BC4EA7520FC712400EC35F5 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4EA7420FC712400EC35F5 /* DetailVC.swift */; };
+		340BC7552102BA2E00193473 /* SymptomChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC7542102BA2E00193473 /* SymptomChartFormatter.swift */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
 		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
 		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
@@ -69,6 +70,7 @@
 		2B31D1CF20F86D4100166B59 /* JourneyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyVC.swift; sourceTree = "<group>"; };
 		2BC4EA7420FC712400EC35F5 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		340BC7542102BA2E00193473 /* SymptomChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomChartFormatter.swift; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		342655DA20DB5D5700020C3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				2B2F0A4F20EAFD820085AA23 /* MealLog.swift */,
 				34A0F2E920F5A59D00372B4C /* ChartStringFormatter.swift */,
 				3426561420E4B3BD00020C3E /* Post.swift */,
+				340BC7542102BA2E00193473 /* SymptomChartFormatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				340BC7552102BA2E00193473 /* SymptomChartFormatter.swift in Sources */,
 				3426561120E4AFA100020C3E /* PostCell.swift in Sources */,
 				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
 				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,

@@ -18,6 +18,7 @@
 		2B2F0A5B20ED70100085AA23 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F0A5A20ED70100085AA23 /* AlertController.swift */; };
 		2B31D1D020F86D4100166B59 /* JourneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B31D1CF20F86D4100166B59 /* JourneyVC.swift */; };
 		2BC4EA7520FC712400EC35F5 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4EA7420FC712400EC35F5 /* DetailVC.swift */; };
+		2BFEDE252107DABC00D94C13 /* PdfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFEDE242107DABC00D94C13 /* PdfVC.swift */; };
 		342655D920DB5D5700020C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655D820DB5D5700020C3E /* AppDelegate.swift */; };
 		342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DA20DB5D5700020C3E /* RootViewController.swift */; };
 		342655DD20DB5D5700020C3E /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342655DC20DB5D5700020C3E /* DataViewController.swift */; };
@@ -68,6 +69,7 @@
 		2B2F0A5A20ED70100085AA23 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		2B31D1CF20F86D4100166B59 /* JourneyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyVC.swift; sourceTree = "<group>"; };
 		2BC4EA7420FC712400EC35F5 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		2BFEDE242107DABC00D94C13 /* PdfVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfVC.swift; sourceTree = "<group>"; };
 		3125346861437D92D9232B0E /* Pods-CMPT276AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppUITests/Pods-CMPT276AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		342655D520DB5D5700020C3E /* CMPT276App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMPT276App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342655D820DB5D5700020C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				34A0F2E520F5A52700372B4C /* JourneyGraphVC.swift */,
 				34A0F2E620F5A52700372B4C /* SymptomVC.swift */,
 				2B25BAC520F99322008DE54D /* ProfileVC.swift */,
+				2BFEDE242107DABC00D94C13 /* PdfVC.swift */,
 				2B2F0A5A20ED70100085AA23 /* AlertController.swift */,
 			);
 			path = Controller;
@@ -487,6 +490,7 @@
 				2B2F0A5420EB1B7C0085AA23 /* MealLogVC.swift in Sources */,
 				2B2F0A5B20ED70100085AA23 /* AlertController.swift in Sources */,
 				2B31D1D020F86D4100166B59 /* JourneyVC.swift in Sources */,
+				2BFEDE252107DABC00D94C13 /* PdfVC.swift in Sources */,
 				2B2F0A5220EB12A00085AA23 /* LogCell.swift in Sources */,
 				2B25BAC620F99322008DE54D /* ProfileVC.swift in Sources */,
 				3426561A20E8000300020C3E /* CommentCell.swift in Sources */,
@@ -682,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture2;
+				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -703,7 +707,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture2;
+				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

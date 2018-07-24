@@ -535,35 +535,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5z-st-CTN">
-                                <rect key="frame" x="93" y="417" width="189" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Create PDF"/>
-                                <connections>
-                                    <action selector="createPDF:" destination="nh0-Bb-YcD" eventType="touchUpInside" id="Cue-WU-O4R"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6b7-64-fSb">
                                 <rect key="frame" x="75" y="98" width="224" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="GTh-6L-6Zo"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sE-kZ-D5o">
+                                <rect key="frame" x="172" y="427" width="30" height="30"/>
+                                <state key="normal" title="pdf"/>
+                                <connections>
+                                    <segue destination="8qK-zc-Kfg" kind="show" id="stX-sq-QgY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1sE-kZ-D5o" firstAttribute="top" secondItem="Ozp-Ub-qdo" secondAttribute="bottom" constant="35" id="6L8-z4-d9B"/>
                             <constraint firstItem="dl2-QF-h2F" firstAttribute="trailing" secondItem="VTL-ZV-CuM" secondAttribute="trailing" constant="111" id="7VM-DH-XkO"/>
+                            <constraint firstItem="Ozp-Ub-qdo" firstAttribute="leading" secondItem="doS-k6-AMw" secondAttribute="leading" id="C7T-D6-YvH"/>
+                            <constraint firstItem="Ozp-Ub-qdo" firstAttribute="centerX" secondItem="1sE-kZ-D5o" secondAttribute="centerX" id="CEQ-kc-NAS"/>
                             <constraint firstItem="Ozp-Ub-qdo" firstAttribute="top" secondItem="6b7-64-fSb" secondAttribute="bottom" constant="30" id="CV9-cV-Lu4"/>
                             <constraint firstItem="dl2-QF-h2F" firstAttribute="bottom" secondItem="VTL-ZV-CuM" secondAttribute="bottom" constant="41" id="FqH-3j-Vyy"/>
                             <constraint firstItem="6b7-64-fSb" firstAttribute="leading" secondItem="dl2-QF-h2F" secondAttribute="leading" constant="75" id="KDZ-lw-hNl"/>
-                            <constraint firstItem="Z5z-st-CTN" firstAttribute="leading" secondItem="dl2-QF-h2F" secondAttribute="leading" constant="93" id="Pxv-lk-Zah"/>
                             <constraint firstItem="VTL-ZV-CuM" firstAttribute="leading" secondItem="dl2-QF-h2F" secondAttribute="leading" constant="110" id="R2c-nD-7jo"/>
                             <constraint firstItem="VTL-ZV-CuM" firstAttribute="top" secondItem="doS-k6-AMw" secondAttribute="bottom" constant="23" id="Syp-1o-gYs"/>
                             <constraint firstItem="6b7-64-fSb" firstAttribute="top" secondItem="dl2-QF-h2F" secondAttribute="top" constant="78" id="Ud6-Rj-qe9"/>
-                            <constraint firstItem="dl2-QF-h2F" firstAttribute="trailing" secondItem="Z5z-st-CTN" secondAttribute="trailing" constant="93" id="WKb-6d-uQN"/>
-                            <constraint firstItem="dl2-QF-h2F" firstAttribute="trailing" secondItem="Ozp-Ub-qdo" secondAttribute="trailing" constant="93" id="aXI-dq-1PF"/>
                             <constraint firstItem="dl2-QF-h2F" firstAttribute="trailing" secondItem="doS-k6-AMw" secondAttribute="trailing" constant="93" id="ck4-Ci-EgZ"/>
                             <constraint firstItem="dl2-QF-h2F" firstAttribute="trailing" secondItem="6b7-64-fSb" secondAttribute="trailing" constant="76" id="eQF-2y-nFM"/>
-                            <constraint firstItem="Z5z-st-CTN" firstAttribute="top" secondItem="Ozp-Ub-qdo" secondAttribute="bottom" constant="25" id="nMP-6z-uBz"/>
-                            <constraint firstItem="Ozp-Ub-qdo" firstAttribute="leading" secondItem="dl2-QF-h2F" secondAttribute="leading" constant="93" id="rro-qj-lRJ"/>
-                            <constraint firstItem="doS-k6-AMw" firstAttribute="top" secondItem="Z5z-st-CTN" secondAttribute="bottom" constant="8" id="yIp-KJ-FDJ"/>
+                            <constraint firstItem="Ozp-Ub-qdo" firstAttribute="trailing" secondItem="doS-k6-AMw" secondAttribute="trailing" id="xYy-5W-q0w"/>
                             <constraint firstItem="doS-k6-AMw" firstAttribute="leading" secondItem="dl2-QF-h2F" secondAttribute="leading" constant="93" id="zz3-ru-heD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dl2-QF-h2F"/>
@@ -1369,6 +1369,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyb-og-hcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="-439.43028485757122"/>
+        </scene>
+        <!--PdfVC-->
+        <scene sceneID="hHs-S6-6go">
+            <objects>
+                <viewController id="8qK-zc-Kfg" customClass="PdfVC" customModule="CMPT276App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lov-rD-7U1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-EZ-cHo">
+                                <rect key="frame" x="16" y="570" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Ganratepdf"/>
+                                <connections>
+                                    <action selector="Ganratepdf:" destination="8qK-zc-Kfg" eventType="touchUpInside" id="QaX-JX-GLH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9d-NF-OVT">
+                                <rect key="frame" x="16" y="501" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvY-L6-aD1">
+                                <rect key="frame" x="16" y="57" width="343" height="421"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="neU-nx-tI5"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbl_name" destination="E9d-NF-OVT" id="3e8-5J-SHG"/>
+                        <outlet property="web_view" destination="jvY-L6-aD1" id="a8x-CV-iat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2w-Ir-EWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="1546"/>
         </scene>
         <!--Comments-->
         <scene sceneID="RsV-8b-4ns">

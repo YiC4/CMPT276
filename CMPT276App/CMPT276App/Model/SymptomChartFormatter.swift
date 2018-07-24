@@ -9,9 +9,9 @@
 import Foundation
 import Charts
 
-class ChartStringFormatter: NSObject, IAxisValueFormatter {
+class SymptomChartFormatter: NSObject, IAxisValueFormatter {
     
-    var nameValues: [String]! = ["", "Bloating", "Fatigue", "Swollen Breasts", "Morning Sickness", "Frequent Urnination", "Spotting", "Food Aversion", "Cravings", "Back Pain"]
+    var nameValues: [String]! = ["", "trimester 1", "trimester 2", "trimester 3"]
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if(value < Double(nameValues.count)){

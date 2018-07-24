@@ -14,6 +14,7 @@ import SwiftKeychainWrapper
 class CommentsVC: UITableViewController {// TODO: CREATE COMMENTS THAT ATTACH TO POST
     
     var post: Post!
+    var userid: String!
     var comments = [Post]()
     var postsRef: DatabaseReference!
     
@@ -55,14 +56,19 @@ class CommentsVC: UITableViewController {// TODO: CREATE COMMENTS THAT ATTACH TO
             
             self.tableView.reloadData()
         })
+        postsRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+        postsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? Dictionary<String,AnyObject>
+            self.userid = value!["username"] as! String
+        })
         
         
     }
     
     @IBAction func OnPost(_ sender: UIButton) {
-        
         if (commentText.text != "") {
-            let newPost = Post(postTitle: "", postText: commentText.text!, userID: "testUser")
+            
+            let newPost = Post(postTitle: "", postText: commentText.text!, userID: userid)
             newPost.saveComment(postkey: post.postKey)
             loadcomment()
         }

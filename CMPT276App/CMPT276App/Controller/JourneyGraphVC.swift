@@ -166,10 +166,8 @@ class JourneyGraphVC: UIViewController{
     }
     
     @IBAction func BloatingTapped(_ sender: Any) {
-        print("bloating tapped")
         BloatingTapped = true;
         performSegue(withIdentifier: "ToSymptom", sender: nil)
-        
     }
     
     @IBAction func FatigueTapped(_ sender: Any) {

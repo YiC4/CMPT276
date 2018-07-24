@@ -16,23 +16,24 @@ class PostVC: UIViewController {
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postText: UITextField!
     @IBOutlet weak var postBtn: UIButton!
-
     
+    var userid: String!
+    var postsRef: DatabaseReference!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        postsRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+        postsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? Dictionary<String,AnyObject>
+            self.userid = value!["username"] as! String
+        })
+    }
     @IBAction func OnPost(_ sender: UIButton) {
-
-        if (postText.text != "" && postTitle.text != "") {
-            let newPost = Post(postTitle: postTitle.text!, postText: postText.text!, userID: "testUser")
+        if (self.postText.text != "" && self.postTitle.text != "") {
+            let newPost = Post(postTitle: self.postTitle.text!, postText: self.postText.text!, userID: self.userid)
             newPost.save()
             self.navigationController!.popViewController(animated: true)
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
+

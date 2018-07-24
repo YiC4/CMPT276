@@ -11,8 +11,10 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 
-class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    
     
     var Bloating: Bool!
     var Fatigue: Bool!
@@ -25,6 +27,10 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     var Cravings: Bool!
     var Backpain: Bool!
     var mealImg: String!
+    
+    var trimesterData = ["1", "2", "3"]
+    let datePicker = UIDatePicker()
+    var trimesterPicker = UIPickerView()
     
     @IBOutlet weak var mealTitle: UITextField!
     @IBOutlet weak var date: UITextField!
@@ -41,7 +47,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
-           
+            
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 mealImage.sourceType = .camera
                 self.present(mealImage, animated: true, completion: nil)
@@ -81,6 +87,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         }
         
         if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
             let imgUid = NSUUID().uuidString
             let metadata = StorageMetadata()
             metadata.contentType = "img/jpeg/png"
@@ -88,6 +95,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             let storageItem = Storage.storage().reference().child("MealImg").child(imgUid)
             storageItem.putData(imgData, metadata: metadata) {
                 (metadata, error) in
+                
                 if error != nil {
                     print("Couldn't upload Image")
                 } else {
@@ -108,6 +116,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     @IBAction func OnPost(_ sender: UIButton) {
         if (mealTitle.text != "") {
+            if mealImg == nil {mealImg = ""}
             let user = Auth.auth().currentUser!.uid
             let newLog = MealLog(userid: user, mealtitle: mealTitle.text!, date: date.text!, trimester: trimester.text!, mealImg: mealImg)
             
@@ -121,25 +130,80 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             if Cravings == true {newLog.Cravings = true}
             if Backpain == true {newLog.Backpain = true}
             if Frequenturination == true {newLog.Frequenturination = true}
-    
+            
             newLog.save()
             //dismiss(animated: true, completion: nil)
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createDatePicker()
+        
+        trimesterPicker.delegate = self
+        trimesterPicker.dataSource = self
+        trimester.inputView = trimesterPicker
     }
+    
+    
+    //DatePicker for date
+    func createDatePicker(){
+        //assign date picker to textfield
+        date.inputView = datePicker
+        
+        //format the display of our datePicker
+        datePicker.datePickerMode = .date
+        
+        //create a toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //add a done button on this toolbar
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
+        toolbar.setItems([doneButton], animated: true)
+        
+        date.inputAccessoryView = toolbar
+    }
+    
+    
+    @objc func doneClicked(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        date.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    //UIPickerView as input for Trimester
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return trimesterData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        trimester.text = trimesterData[row]
+        self.view.endEditing(false)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return trimesterData[row]
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func back(_ sender: AnyObject){
-        dismiss(animated: true, completion: nil)
-    }
-
     
+    //symptoms tapped
     @IBAction func BloatingTapped(_ sender: UIButton){
         if sender.isSelected {
             sender.isSelected = false
@@ -179,7 +243,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             Morningsickness = true
         }
     }
-        
+    
     @IBAction func MoodswingsTapped(_ sender: UIButton){
         if sender.isSelected {
             sender.isSelected = false
@@ -189,7 +253,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             Moodswings = true
         }
     }
-        
+    
     @IBAction func SpottingTapped(_ sender: UIButton){
         if sender.isSelected {
             sender.isSelected = false
@@ -199,7 +263,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             Spotting = true
         }
     }
-        
+    
     @IBAction func FoodaversionTapped(_ sender: UIButton){
         if sender.isSelected {
             sender.isSelected = false
@@ -238,24 +302,5 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             sender.isSelected = true
             Frequenturination = true
         }
-    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
+    }   
 }

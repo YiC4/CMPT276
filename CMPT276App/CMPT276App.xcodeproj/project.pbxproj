@@ -39,6 +39,7 @@
 		34A0F2EA20F5A59D00372B4C /* ChartStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0F2E920F5A59D00372B4C /* ChartStringFormatter.swift */; };
 		B511B9D847D61F5B372A34B9 /* Pods_CMPT276AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C146571DF4BF2ACD92DC742 /* Pods_CMPT276AppUITests.framework */; };
 		B54342AE32CE570E7D45252B /* Pods_CMPT276AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607B25F306DA49AE81C9A913 /* Pods_CMPT276AppTests.framework */; };
+		FA334BB52107E56100366D7E /* PdfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BB42107E56100366D7E /* PdfVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		A09DB6B173F33709858127E4 /* Pods-CMPT276App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276App/Pods-CMPT276App.debug.xcconfig"; sourceTree = "<group>"; };
 		D0F4E0ED29F913EA631A0D9B /* Pods-CMPT276AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppTests/Pods-CMPT276AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D97F1A37CA8B1F1EFCA69E42 /* Pods_CMPT276App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMPT276App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA334BB42107E56100366D7E /* PdfVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 				34A0F2E520F5A52700372B4C /* JourneyGraphVC.swift */,
 				34A0F2E620F5A52700372B4C /* SymptomVC.swift */,
 				2B25BAC520F99322008DE54D /* ProfileVC.swift */,
+				FA334BB42107E56100366D7E /* PdfVC.swift */,
 				2B2F0A5A20ED70100085AA23 /* AlertController.swift */,
 			);
 			path = Controller;
@@ -483,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				340BC7552102BA2E00193473 /* SymptomChartFormatter.swift in Sources */,
+				FA334BB52107E56100366D7E /* PdfVC.swift in Sources */,
 				3426561120E4AFA100020C3E /* PostCell.swift in Sources */,
 				342655DB20DB5D5700020C3E /* RootViewController.swift in Sources */,
 				3426560B20E493A000020C3E /* ConnectVC.swift in Sources */,

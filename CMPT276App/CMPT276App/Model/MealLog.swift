@@ -48,7 +48,8 @@ class MealLog{ // Meal Log Data Structure
         Cravings = false
         Backpain = false
        
-        _postRef = Database.database().reference().child("users").child(UserID).child("mealLog").child(mealtitle)
+        //let title = date + mealtitle
+        _postRef = Database.database().reference().child("users").child(UserID).child("mealLog").childByAutoId()
     }
     
     init(snapshot: DataSnapshot){
@@ -96,6 +97,8 @@ class MealLog{ // Meal Log Data Structure
             "Backpain" : Backpain
         ]
     }
+    
+    
     
     
 }

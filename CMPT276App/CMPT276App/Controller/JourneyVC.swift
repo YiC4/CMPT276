@@ -26,7 +26,12 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var FoodaversionLogs = [MealLog]()
     var CravingsLogs = [MealLog]()
     var BackpainLogs = [MealLog]()
+    
     @IBOutlet weak var tableView: UITableView! //Table View which is populated by meal logs
+    
+    var keyArray:[String] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,7 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         loadMealLogs()
 
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJourneyGraph" {
             if let destination = segue.destination as? JourneyGraphVC {
@@ -150,6 +156,35 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func getAllKeys() {
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog").observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                self.keyArray.append(key)
+                self.keyArray.reverse()
+            }
+        })
+    }
+    
+    //delete meal logs
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            getAllKeys()
+            let when = DispatchTime.now() + 0.5
+            DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog").child(self.keyArray[indexPath.row]).removeValue()
+                self.logs.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.keyArray = []
+                })
+        }
+    }
+    
     
     //Pass data to DetailVC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -157,16 +192,19 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         DvC.getMeatTitle = logs[indexPath.row].MealTitle
         DvC.getDate = logs[indexPath.row].Date
-//        DvC.getBloating = logs[indexPath.row].Bloating
-//        DvC.getFatigue = logs[indexPath.row].Fatigue
-//        DvC.getSwollenbreasts = logs[indexPath.row].Swollenbreasts
-//        DvC.getMorningsickness = logs[indexPath.row].Morningsickness
-//        DvC.getFrequenturination = logs[indexPath.row].Frequenturination
-//        DvC.getSpotting = logs[indexPath.row].Spotting
-//        DvC.getFoodaversion = logs[indexPath.row].Foodaversion
-//        DvC.getCravings = logs[indexPath.row].Cravings
-//        DvC.getBackpain = logs[indexPath.row].Backpain
         DvC.getTrimester = logs[indexPath.row].Trimester
+        
+        if logs[indexPath.row].Bloating == true { DvC.getSymptoms = DvC.getSymptoms + "Bloating\n"}
+        if logs[indexPath.row].Fatigue == true { DvC.getSymptoms = DvC.getSymptoms + "Fatigue\n"}
+        if logs[indexPath.row].Swollenbreasts == true { DvC.getSymptoms = DvC.getSymptoms + "Swollenbreasts\n"}
+        if logs[indexPath.row].Morningsickness == true { DvC.getSymptoms = DvC.getSymptoms + "Morningsickness\n"}
+        if logs[indexPath.row].Frequenturination == true { DvC.getSymptoms = DvC.getSymptoms + "Frequenturination\n"}
+        if logs[indexPath.row].Moodswings == true { DvC.getSymptoms = DvC.getSymptoms + "Moodswings\n"}
+        if logs[indexPath.row].Spotting == true { DvC.getSymptoms = DvC.getSymptoms + "Spotting\n"}
+        if logs[indexPath.row].Foodaversion == true { DvC.getSymptoms = DvC.getSymptoms + "Foodaversion\n"}
+        if logs[indexPath.row].Cravings == true { DvC.getSymptoms = DvC.getSymptoms + "Cravings\n"}
+        if logs[indexPath.row].Backpain == true { DvC.getSymptoms = DvC.getSymptoms + "Backpain\n"}
+        
         
         //Download image through URL
         let urlKey = logs[indexPath.row].MealImg

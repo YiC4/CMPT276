@@ -59,7 +59,6 @@ class UserVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             imageSelected = true
         } else {
             AlertController.showAlert(self, title: "Missing Info", message: "Please select image")
-            print("image wasn't selected")
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }

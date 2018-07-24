@@ -31,17 +31,6 @@ class LogCell: UITableViewCell {
                 }
             }
             
-            
-//            if mealLog.Backpain == true {symptoms.text = symptoms.text! + "Backpain,"}
-//            if mealLog.Bloating == true {symptoms.text = symptoms.text! + "Bloating,"}
-//            if mealLog.Cravings == true {symptoms.text = symptoms.text! + "Cravings,"}
-//            if mealLog.Fatigue == true {symptoms.text = symptoms.text! + "Fatigue,"}
-//            if mealLog.Foodaversion == true {symptoms.text = symptoms.text! + "Foodaversion,"}
-//            if mealLog.Frequenturination == true {symptoms.text = symptoms.text! + "Frequenturination,"}
-//            if mealLog.Moodswings == true {symptoms.text = symptoms.text! + "Moodswings,"}
-//            if mealLog.Morningsickness == true {symptoms.text = symptoms.text! + "Morningsickness,"}
-//            if mealLog.Spotting == true {symptoms.text = symptoms.text! + "Spotting,"}
-//            if mealLog.Swollenbreasts == true {symptoms.text = symptoms.text! + "Swollenbreasts"}
         }
     }
 

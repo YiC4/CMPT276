@@ -11,7 +11,7 @@ import Charts
 
 class ChartStringFormatter: NSObject, IAxisValueFormatter {
     
-    var nameValues: [String]! = ["", "Bloating", "Fatigue", "Swollen Breasts", "Morning Sickness", "Frequent Urnination", "Spotting", "Food Aversion", "Cravings", "Back Pain"]
+    var nameValues: [String]! = ["", "Bloating", "Fatigue", "Swollen Breasts", "Morning Sickness", "Frequent Urnination", "Mood Swings", "Spotting", "Food Aversion", "Cravings", "Back Pain"]
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if(value < Double(nameValues.count)){

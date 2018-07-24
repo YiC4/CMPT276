@@ -14,16 +14,7 @@ class DetailVC: UIViewController {
     var getDate = String()
     var getTrimester = String()
     var getImage = UIImage()
-    
-    var getBloating = Bool()
-    var getFatigue = Bool()
-    var getSwollenbreasts = Bool()
-    var getMorningsickness = Bool()
-    var getFrequenturination = Bool()
-    var getSpotting = Bool()
-    var getFoodaversion = Bool()
-    var getCravings = Bool()
-    var getBackpain = Bool()
+    var getSymptoms = String()
     
     @IBOutlet weak var mealTitleD: UILabel!
     @IBOutlet weak var dateD: UILabel!
@@ -42,17 +33,7 @@ class DetailVC: UIViewController {
         dateD.text! = getDate
         imageD.image = getImage
         trimesterD.text! = "Trimester " + getTrimester
-        //        todo: add symptoms
-//        symptomD.text! = "Symptoms:"
-//        if getBloating == true {symptomD.text! = symptomD.text! + " Bloating"}
-//        if getFatigue == true {symptomD.text! = symptomD.text! + " Fatigue"}
-//        if getSwollenbreasts == true {symptomD.text! = symptomD.text! + " Swollenbreasts"}
-//        if getMorningsickness == true {symptomD.text! = symptomD.text! + " Morningsickness"}
-//        if getFrequenturination == true {symptomD.text! = symptomD.text! + " Frequenturination"}
-//        if getSpotting == true {symptomD.text! = symptomD.text! + " Spotting"}
-//        if getFoodaversion == true {symptomD.text! = symptomD.text! + " Foodaversion"}
-//        if getCravings == true {symptomD.text! = symptomD.text! + " Cravings"}
-//        if getBackpain == true {symptomD.text! = symptomD.text! + " Backpain"}
+        symptomD.text! = getSymptoms
         
     }
 

@@ -215,10 +215,10 @@
 			children = (
 				2B2F0A4620EAF47C0085AA23 /* ViewController.swift */,
 				2B2F0A4520EAF47C0085AA23 /* UserVC.swift */,
-				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				2B31D1CF20F86D4100166B59 /* JourneyVC.swift */,
-				2BC4EA7420FC712400EC35F5 /* DetailVC.swift */,
 				2B2F0A5320EB1B7C0085AA23 /* MealLogVC.swift */,
+				2BC4EA7420FC712400EC35F5 /* DetailVC.swift */,
+				3426560A20E493A000020C3E /* ConnectVC.swift */,
 				3426561720E4BA6100020C3E /* PostVC.swift */,
 				3426561B20E8017100020C3E /* CommentsVC.swift */,
 				34A0F2E520F5A52700372B4C /* JourneyGraphVC.swift */,
@@ -682,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture;
+				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -703,7 +703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture;
+				PRODUCT_BUNDLE_IDENTIFIER = sfu.ca.cla325.Nurture2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

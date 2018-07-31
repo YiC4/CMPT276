@@ -71,6 +71,7 @@ class ConnectVC: UITableViewController {
         return cell
     }
     
+    //set table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex = indexPath.row
         performSegue(withIdentifier: "tocomments", sender: posts[myindex])

@@ -9,6 +9,7 @@
 import Foundation
 import Charts
 
+//Class to format the xaxis of the symptom graph
 class SymptomChartFormatter: NSObject, IAxisValueFormatter {
     
     var nameValues: [String]! = ["", "trimester 1", "trimester 2", "trimester 3"]

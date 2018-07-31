@@ -9,6 +9,7 @@
 import Foundation
 import Charts
 
+//class to format xaxis for the journey graph
 class ChartStringFormatter: NSObject, IAxisValueFormatter {
     
     var nameValues: [String]! = ["", "Bloating", "Fatigue", "Swollen Breasts", "Morning Sickness", "Frequent Urnination", "Spotting", "Food Aversion", "Cravings", "Back Pain"]

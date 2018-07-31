@@ -4,7 +4,7 @@
 //
 //  Created by Melissa Lee on 2018-06-30.
 //  Copyright © 2018 Nurture. All rights reserved.
-//
+//  Usage: allow user to leave comment
 //
 
 import UIKit
@@ -65,6 +65,7 @@ class CommentsVC: UITableViewController {// TODO: CREATE COMMENTS THAT ATTACH TO
         
     }
     
+    //set Psot button
     @IBAction func OnPost(_ sender: UIButton) {
         if (commentText.text != "") {
             

@@ -4,7 +4,7 @@
 //
 //  Created by Melissa Lee on 2018-07-05.
 //  Copyright © 2018 Nurture. All rights reserved.
-//
+//  Usage: generate journey graph
 
 import UIKit
 import Charts
@@ -83,10 +83,9 @@ class JourneyGraphVC: UIViewController{
         barChart.zoom(scaleX: 2.5, scaleY: 0, x: 0, y: 0)
         
         updateChartData()
-        // Do any additional setup after loading the view.
     }
 
-    
+    //upload chart data
     func updateChartData(){
         let chartDataSet = BarChartDataSet(values: numberOfLogsDataEntries, label: nil)
         let chartData = BarChartData(dataSet: chartDataSet)
@@ -101,6 +100,7 @@ class JourneyGraphVC: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    //send data to next segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToSymptom" {
             if let destination = segue.destination as? SymptomVC {
@@ -165,6 +165,7 @@ class JourneyGraphVC: UIViewController{
         }
     }
     
+    //set symptom buttons
     @IBAction func BloatingTapped(_ sender: Any) {
         BloatingTapped = true;
         performSegue(withIdentifier: "ToSymptom", sender: nil)

@@ -54,6 +54,9 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         loadMealLogs()
         
     }
+    // Outlet for bar button
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJourneyGraph" {
@@ -148,6 +151,7 @@ class JourneyVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         return true
     }
     
+    // fetch all keys
     func getAllKeys() {
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("mealLog").observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children {

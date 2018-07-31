@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CommentCell: UITableViewCell {//TODO: CREATE THIS COMMENT CELL
+class CommentCell: UITableViewCell {//Formats Comment cell
 
     
     @IBOutlet weak var userID: UILabel!
@@ -30,23 +30,12 @@ class CommentCell: UITableViewCell {//TODO: CREATE THIS COMMENT CELL
         // Configure the view for the selected state
     }
     
+    //configures the comment cell
     func configCell(post: Post){
         self.post = post
         self.userID.text = post.userID
         self.postText.text = post.postText
         
-        //let ref = Storage.storage().reference(forURL: post.userImg)
-        //        ref.getData(withMaxSize: 10000000, completion: { (data, error) in
-        //            if error != nil {
-        //                print("Could not load image")
-        //            } else {
-        //                if let imgData = data {
-        //                    if let img = UIImage(data: imgData){
-        //                        self.userImg.image = img
-        //                    }
-        //                }
-        //            }
-        //        } )
         
     }
 }

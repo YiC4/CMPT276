@@ -4,7 +4,7 @@
 //
 //  Created by Lcy on 2018/7/15.
 //  Copyright © 2018年 Nurture. All rights reserved.
-//
+//  Usage: get mealLpg data
 
 import UIKit
 

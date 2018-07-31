@@ -39,6 +39,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     @IBOutlet weak var imageViewer: UIImageView!
     
+    //get image
     @IBAction func imagePicker(_ sender: Any)
     {
         let mealImage = UIImagePickerController()
@@ -68,6 +69,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         self.present(actionSheet, animated: true, completion: nil)
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -80,6 +82,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //upload maelLog
     func uploadMealImg(){
         guard let img = imageViewer.image else{
             print("image must be selected")
@@ -114,6 +117,7 @@ class MealLogVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         }
     }
     
+    //set post botton
     @IBAction func OnPost(_ sender: UIButton) {
         if (mealTitle.text != "") {
             if mealImg == nil {mealImg = ""}

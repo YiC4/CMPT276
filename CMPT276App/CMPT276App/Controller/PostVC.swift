@@ -28,6 +28,8 @@ class PostVC: UIViewController {
             self.userid = value!["username"] as! String
         })
     }
+    
+    //set Post button
     @IBAction func OnPost(_ sender: UIButton) {
         if (self.postText.text != "" && self.postTitle.text != "") {
             let newPost = Post(postTitle: self.postTitle.text!, postText: self.postText.text!, userID: self.userid)

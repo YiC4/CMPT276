@@ -40,6 +40,11 @@
 		B511B9D847D61F5B372A34B9 /* Pods_CMPT276AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C146571DF4BF2ACD92DC742 /* Pods_CMPT276AppUITests.framework */; };
 		B54342AE32CE570E7D45252B /* Pods_CMPT276AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607B25F306DA49AE81C9A913 /* Pods_CMPT276AppTests.framework */; };
 		FA334BB52107E56100366D7E /* PdfVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BB42107E56100366D7E /* PdfVC.swift */; };
+		FA334BBA2111288D00366D7E /* ConnectVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BB82111288D00366D7E /* ConnectVCTests.swift */; };
+		FA334BBB2111288D00366D7E /* CMPT276AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BB92111288D00366D7E /* CMPT276AppTests.swift */; };
+		FA334BBF2111289800366D7E /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BBC2111289800366D7E /* ViewControllerTests.swift */; };
+		FA334BC02111289800366D7E /* JourneyVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BBD2111289800366D7E /* JourneyVCTests.swift */; };
+		FA334BC12111289800366D7E /* UserVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA334BBE2111289800366D7E /* UserVCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +82,7 @@
 		342655DA20DB5D5700020C3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		342655DC20DB5D5700020C3E /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		342655DE20DB5D5700020C3E /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		342655E320DB5D5800020C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		342655E320DB5D5800020C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CMPT276App/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		342655E620DB5D5800020C3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342655E820DB5D5800020C3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		342655ED20DB5D5800020C3E /* CMPT276AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMPT276AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +110,11 @@
 		D0F4E0ED29F913EA631A0D9B /* Pods-CMPT276AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMPT276AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CMPT276AppTests/Pods-CMPT276AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D97F1A37CA8B1F1EFCA69E42 /* Pods_CMPT276App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMPT276App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA334BB42107E56100366D7E /* PdfVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfVC.swift; sourceTree = "<group>"; };
+		FA334BB82111288D00366D7E /* ConnectVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectVCTests.swift; path = ../../../../../../CMPT276/CMPT276App/CMPT276AppTests/ConnectVCTests.swift; sourceTree = "<group>"; };
+		FA334BB92111288D00366D7E /* CMPT276AppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMPT276AppTests.swift; path = ../../../../../../CMPT276/CMPT276App/CMPT276AppTests/CMPT276AppTests.swift; sourceTree = "<group>"; };
+		FA334BBC2111289800366D7E /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTests.swift; path = ../../../../../../CMPT276/CMPT276App/CMPT276AppTests/ViewControllerTests.swift; sourceTree = "<group>"; };
+		FA334BBD2111289800366D7E /* JourneyVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneyVCTests.swift; path = ../../../../../../CMPT276/CMPT276App/CMPT276AppTests/JourneyVCTests.swift; sourceTree = "<group>"; };
+		FA334BBE2111289800366D7E /* UserVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserVCTests.swift; path = ../../../../../../CMPT276/CMPT276App/CMPT276AppTests/UserVCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +187,12 @@
 		342655F020DB5D5800020C3E /* CMPT276AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA334BBD2111289800366D7E /* JourneyVCTests.swift */,
+				FA334BBE2111289800366D7E /* UserVCTests.swift */,
+				FA334BBC2111289800366D7E /* ViewControllerTests.swift */,
 				342655F120DB5D5800020C3E /* CMPT276AppTests.swift */,
+				FA334BB92111288D00366D7E /* CMPT276AppTests.swift */,
+				FA334BB82111288D00366D7E /* ConnectVCTests.swift */,
 				342655F320DB5D5800020C3E /* Info.plist */,
 			);
 			path = CMPT276AppTests;
@@ -517,6 +532,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				342655F220DB5D5800020C3E /* CMPT276AppTests.swift in Sources */,
+				FA334BC02111289800366D7E /* JourneyVCTests.swift in Sources */,
+				FA334BBB2111288D00366D7E /* CMPT276AppTests.swift in Sources */,
+				FA334BBF2111289800366D7E /* ViewControllerTests.swift in Sources */,
+				FA334BBA2111288D00366D7E /* ConnectVCTests.swift in Sources */,
+				FA334BC12111289800366D7E /* UserVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UKXWQFNKXV;
+				DEVELOPMENT_TEAM = N883554YMR;
 				INFOPLIST_FILE = CMPT276App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -705,7 +725,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UKXWQFNKXV;
+				DEVELOPMENT_TEAM = N883554YMR;
 				INFOPLIST_FILE = CMPT276App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
